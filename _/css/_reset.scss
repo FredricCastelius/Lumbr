@@ -11,7 +11,7 @@
  */
 
 html {
-  font-family: sans-serif; /* 1 */
+  //font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -232,7 +232,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  //font-family: monospace, monospace;
   font-size: 1em;
 }
 
@@ -257,7 +257,7 @@ optgroup,
 select,
 textarea {
   color: inherit; /* 1 */
-  font: inherit; /* 2 */
+  //font: inherit; /* 2 */
   margin: 0; /* 3 */
 }
 
@@ -453,7 +453,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	//font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -500,7 +500,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	font-family: sans-serif;
+	//font-family: sans-serif;
 }
 
 /* Universal Selector ‘*’ Reset */
@@ -565,6 +565,11 @@ mark {
 
 .clear {
 	clear: both;
+}
+
+/* make sure that no extra margin adds in the bottom of the page */
+p:last-child {
+  margin-bottom: 0;
 }
 
 /* Responsive images */

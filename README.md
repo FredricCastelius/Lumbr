@@ -1,9 +1,9 @@
-Liquid
+Lumber
 =============
 
-Liquid is a well ececuted combination of the best front-end frameworks out there. Including great typography, next-gen gridsystem with a elastic with a fluid thinking plus a neat code structure its forms a very powerful bootstrap for your next webproduction. All in search for the holy grail.
+Lumber is a well executed combination of the best front-end frameworks out there. Including great typography, next-gen gridsystem with a elastic with a fluid thinking plus a neat code structure its forms a very powerful bootstrap for your next webproduction. All in search for the holy grail.
 
-Goals to achieve with liquid:
+Goals to achieve with Lumber:
 
 * Be able to create any layout
 * Totally retina and any device optimized

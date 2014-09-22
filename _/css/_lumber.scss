@@ -1,30 +1,27 @@
-/*! liquid.scss by West */
+/*! lumber.scss by Fredric Castelius */
 
-/* ?responsive breakpoint
-   ========================================================================== */
 
-// ?desktops
-$desktopWidth: 80em; // when desktops starts | twitter bootstrap default: 1200px
-$desktopLayoutBase: 120%; 
+// Typographic settings
+@if $headings-hierarchy == true {
+	// default heading
+}
 
-// ?laptops
-$laptopWidth: 60em; // when laptops starts | twitter bootstrap default: 960px
-$laptopFontBaseSize: 100%;
+@if $headings-in-two-sizes == true {
+	h1, h2, h3 {
+		font-size: fnGetSpacing(200);
+	}
+	h3, h4, h5, h6 {
+		font-size: fnGetSpacing(100);
+	}
+}
 
-// ?phones
-$phoneWidth: 30em; // when phone ends | twitter bootstrap default: 767px
-$phoneFontBaseSize:  100%;
+@if $headings-same-size == true {
+	h1, h2, h3, h3, h4, h5, h6 {
+		font-size: fnGetSpacing(100);
+	}
+}
 
-// ?tablets
-$tabletWidth: $phoneWidth + 0.000001em; // when tablet starts | twitter bootstrap default: 768px
-$tabletFontBaseSize: 100%;
-
-$layoutMaxPoint: 1280px; // where fluid width stops
-
-/* ==========================================================================
-   ?body
-   ========================================================================== */
-
+// Body
 body { // !main content
 	max-width: $layoutMaxPoint;
 	margin: 0 fnGetSpacing(100) 0 fnGetSpacing(100);
@@ -34,76 +31,8 @@ body { // !main content
 	}
 }
 
-/* ==========================================================================
-   ?base styles
-   ========================================================================== */
-
-// ?font
-$baseFont: 'Lato', sans-serif; // base font 
-$baseFontSpacing: fnGetSpacing(0); // font spacing 
-$baseFontWeight: 300; // font weight
-$baseFontColor: #000; // all regular text color 
-
-// ?headings
-$headingsFont: 'Lato', sans-serif; // Headings font | same as base font as default
-$headingsFontSpacing: fnGetSpacing(-4); // headings font spacing | same as base font as default
-$headingsFontWeight: bold; // headings font weight | same as base font as default
-$headingsFontColor: $baseFontColor; // headings font weight | same as base font as default
-
-// ?headings title | if you want special styles for the first H1
-$headingsTitleFontSize: 600%; 
-$headingsTitleFontLineHeight: $headingsFontSpacing; 
-$headingsTitleFontSpacing: $headingsFontSpacing; 
-$headingsTitleFont: $headingsFont; 
-$headingsTitleFontWeight: $headingsFontWeight; 
-
-// ?links 
-$linkColor: $baseFontColor; // all regular links color | default: $baseFontColor
-$linkBorderColor: rgba(0, 0, 0, 0.1); // link border color | default: rgba(0, 0, 0, 0.2) | suggestion: $baseFontColor, $bodyBackground
-
-// ?links hover
-$linkHoverColor: $baseFontColor; // link text color when hover | default: $baseFontColor
-$linkHoverBorderPosition: fnGetSpacing(12); // position of the border | default: fnGetSpacing(10)
-$linkHoverBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
-$linkHoverBorderColor: $baseFontColor; // border color | default: $baseFontColor
-$linkHoverBorderStyle: solid; // border style
-
-// ?links active
-$linkActiveColor: $baseFontColor; // color when clicking on link | default: $baseFontColor 
-
-// ?input
-$inputBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
-$inputBorderColor: #ccc; // border color | default: #ccc
-$inputBorderStyle: solid; // border style
-$inputBorderRadius: 2px; // border radius
-$inputFocusBorderColor: $inputBorderColor; // border when focusing on input field | default: $inputBorderColor
-
-// ?button 
-$buttonBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
-$buttonBackground: transparent;
-$buttonBorderColor: #999; // border color | default: #ccc
-$buttonBorderStyle: solid; // border style
-$buttonBorderRadius: 4px; // border radius
-$buttonFocusBorderColor: $buttonBorderColor; // border when focusing on input field | default: $inputBorderColor
-
-// ?button hover
-$buttonHoverColor: #fff;
-$buttonHoverBackground: #000;
-$buttonHoverBorderSize: fnGetSpacing(5);
-$buttonHoverBorderStyle: solid;
-$buttonHoverBorderColor: #111;
-
-// ?button active
-$buttonActiveBackground: #555;
-
-// ?animation speed
-$animationDuration: 500ms; // animation speed | when page loads animations
-
-// ?hover speed
-$hoverTransitionSpeed: 500ms; // transistion speed | when hover over something animations 
-
+// Responsive breakpoint
 html {
-
 	/* !responsive */
  	@media (max-width: $phoneWidth) {
  		font-size: $phoneFontBaseSize;
@@ -120,6 +49,9 @@ html {
  	@media (min-width: $desktopWidth) {
  		font-size: $desktopLayoutBase;
  	}
+}
+
+html {
 	
 	body {
 
@@ -129,7 +61,7 @@ html {
 		font-weight: $baseFontWeight;
 		color: $baseFontColor;
 		
-		h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a {
+		h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a, h6, h6 a, .drop-cap:first-letter {
 			/* !headings */
 			font-family: $headingsFont;
 			letter-spacing: $headingsFontSpacing;
@@ -264,20 +196,35 @@ $selectionTextShadow: none; // Text shadow when text selected | Example code: 1p
 	text-shadow: $selectionTextShadow;
 }
 
+// article
+article {
+	ul, ol {
+		margin-bottom: fnGetSpacing(100); // adding elastic bottom margin  
+	}
+	ul {
+		//margin-left: fnGetSpacing(80); // make unsorted lists align vertically in articles
+		list-style: none;
+		
+	}
+	ol {
+		margin-left: fnGetSpacing(90); // make sorted lists align vertically in articles
+	}
+}
+
 /* ?content
    ========================================================================== */
 
 @mixin content() {
-	p {
+	/*p {
 		margin-bottom: fnGetSpacing(200);
 		& + p {
 			text-indent: fnGetSpacing(0); // remove default text indention when new paragraph | overrides setting in TypePlate
 		}
-	}
+	}*/
 
 	h1, h2, h3 {
 		font-weight: $headingsFontWeight;
-		margin-left: fnGetSpacing(-1);
+		margin-left: fnGetSpacing(-1); // vertical alignment
 	}
 
 	h4, h5, h6 {
@@ -288,14 +235,6 @@ $selectionTextShadow: none; // Text shadow when text selected | Example code: 1p
 		margin-bottom: fnGetSpacing(36);
 		line-height: fnGetSpacing(74);
 		letter-spacing: fnGetSpacing(-3);
-		
-		&#title {
-			font-size: $headingsTitleFontSize;
-			line-height: $headingsTitleFontLineHeight;
-			letter-spacing: $headingsTitleFontSpacing;
-			font-family: $headingsTitleFont;
-			font-weight: $headingsTitleFontWeight;
-		}
 	}
 
 	h2 {
@@ -346,27 +285,16 @@ $selectionTextShadow: none; // Text shadow when text selected | Example code: 1p
 		margin-top: fnGetSpacing(-100);	
 	}
 
-	p + ul, ol {
-		margin-top: fnGetSpacing(-100);	
-	}
-
-	ul li {
-		&:before {
-	    content: "•";
-	    color: $baseFontColor;
-		margin-right: fnGetSpacing(50); 
+	ul {
+		list-style: none;
+			li {
+			&:before {
+		    content: "•";
+		    color: $baseFontColor;
+			margin-right: fnGetSpacing(50); 
+		    }
 	    } 
 	}
-
-	ol {
-		margin-top: fnGetSpacing(100); 
-		margin-left: fnGetSpacing(90); 
-	}
-
-	// ?table
-	$tableBorderColor: #eee;
-	$tableBorderStyle: solid;
-	$tableBorderSize: fnGetSpacing(5);
 
 	// !table
 	table {
@@ -450,6 +378,7 @@ $selectionTextShadow: none; // Text shadow when text selected | Example code: 1p
 		margin: 0 0 fnGetSpacing(100) 0;
 	}
 }
+
 /* !reset
    ========================================================================== */
 
@@ -474,4 +403,11 @@ $selectionTextShadow: none; // Text shadow when text selected | Example code: 1p
 	ol {
 		margin-left: fnGetSpacing(90);
 	}
+}
+
+/* !reset
+   ========================================================================== */
+
+article {
+	@include content();
 }

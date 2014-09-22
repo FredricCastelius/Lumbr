@@ -1,9 +1,8 @@
-/* ==========================================================================
-   Mixins
-   ========================================================================== */
+/*! Functions by Fredric Castelius */
 
+$paragraph-spacing: 1.5em; // text indentation value
 @function fnGetSpacing($multiple) { // elastic spacing function with em fallback
-	@return $indent-val * $multiple / 100;
+	@return $paragraph-spacing * $multiple / 100;
 }
 
 // !responsiv breakpoints 

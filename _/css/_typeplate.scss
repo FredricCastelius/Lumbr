@@ -36,7 +36,7 @@ $measure: $font-base * $line-height;
 // -------------------------------------//
 
 // Text Indentation Value
-$indent-val: 1.5em !default;
+$paragraph-spacing: 1.5em !default;
 
 // Paragraph Styling Boolean
 // 'false' - no vertical whitespace between subsequent paragraphs.
@@ -123,13 +123,13 @@ $small-caps-weight: 600 !default;
 // -------------------------------------//
 
 $dropcap-float-position: left !default;
-$dropcap-font-size: 4em !default;
+$dropcap-font-size: fnGetSpacing(300) !default;
 $dropcap-font-family: inherit !default;
 $dropcap-txt-indent: 0 !default;
-$dropcap-margin: inherit !default;
+$dropcap-margin: fnGetSpacing(5) fnGetSpacing(15) fnGetSpacing(0) 0 !default;
 $dropcap-padding: inherit !default;
 $dropcap-color: inherit !default;
-$dropcap-line-height: 1 !default;
+$dropcap-line-height: 0.8 !default;
 $dropcap-bg: transparent !default;
 
 
@@ -539,7 +539,7 @@ body {
 	// break-word : Indicates that normally unbreakable words may be broken at ...
 	// arbitrary points if there are no otherwise acceptable break points in the line.
 	@extend %breakword;
-	color: $body-copy-color;
+	//color: $body-copy-color;
 }
 
 small {
@@ -622,14 +622,14 @@ h6 {
 // -------------------------------------//
 
 p {
-	margin: auto auto $indent-val;
+	margin: auto auto $paragraph-spacing;
 
 	// Conditonal Check For Paragraph Styling
 	@if $paragraph-vertical-whitespace == false {
 		& + p {
 			//siblings indentation
-			text-indent: $indent-val;
-			margin-top: -$indent-val;
+			text-indent: $paragraph-spacing;
+			margin-top: -$paragraph-spacing;
 		}
 	}
 }
@@ -685,7 +685,6 @@ code {
  *
  */
 abbr {
-	@include smallcaps($small-caps-color, $small-caps-weight);
 	&[title]:hover {
 		cursor: help;
 	}
@@ -701,7 +700,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: $heading-color;
+	//color: $heading-color;
 }
 
 
