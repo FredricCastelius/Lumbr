@@ -1,0 +1,170 @@
+<h1>Liquid</h1>
+
+<p>Liquid is a well ececuted combination of the best front-end frameworks out there. Including great typography, next-gen gridsystem with a elastic with a fluid thinking plus a neat code structure its forms a very powerful bootstrap for your next webproduction. All in search for the holy grail.</p>
+
+<p>Goals to achieve with liquid:</p>
+
+<ul>
+<li>Be able to create any layout</li>
+<li>Totally retina and any device optimized</li>
+<li>SVG with png fallback</li>
+<li>Super low code to text ratio</li>
+<li>Good semantics</li>
+<li>Be able to handle any situations in WP-content</li>
+<li>Good to print</li>
+</ul>
+
+
+<h2>Mixins</h2>
+
+<h3>Responsive breakpoints</h3>
+
+<pre><code>@include breakpoint(laptop-and-under) { }
+@include breakpoint(tablet-and-under) { }
+@include breakpoint(phone-and-under) { }
+
+@include breakpoint(phone-to-tablet) { }
+@include breakpoint(tablet-to-laptop) { }
+@include breakpoint(laptop-to-desktop) { }
+
+@include breakpoint(phone-and-up) { }
+@include breakpoint(tablet-and-up) { }
+@include breakpoint(laptop-and-up) { }
+@include breakpoint(desktop-and-up) { }
+</code></pre>
+
+<h3>Retina images</h3>
+
+<p>This example states that we have a 100px x 25px img. Change the 100px to your img width and 25px to your img height.</p>
+
+<pre><code>background: url("img.png") no-repeat;
+@include image-2x("img2x.png", widthpx, heightpx);
+</code></pre>
+
+<h3>Clearfix</h3>
+
+<pre><code>@include clearfix();
+</code></pre>
+
+<h3>Clearstyle</h3>
+
+<p>Enough is enough: this clears all pre padding, margin, line-heights and font-sizes.</p>
+
+<pre><code>@include clearstyle();
+</code></pre>
+
+<h3>Center</h3>
+
+<pre><code>@include center-block;
+</code></pre>
+
+<h3>text-truncate</h3>
+
+<p>End text when block stops.</p>
+
+<pre><code>@include text-truncate;
+</code></pre>
+
+<h3>Absolute posistion</h3>
+
+<pre><code>@include abs-pos(10px, 10px, 5px, 15px);
+</code></pre>
+
+<h3>Hypens</h3>
+
+<pre><code>@include hyphens("auto");
+</code></pre>
+
+<h3>Opacity</h3>
+
+<p>Transparent to 80 percent.</p>
+
+<pre><code>@include opacity(0.8);
+</code></pre>
+
+<h3>Rounded coners</h3>
+
+<pre><code>@include roundedCorners(100%);
+</code></pre>
+
+<h3>Animations</h3>
+
+<pre><code>@mixin animate();
+
+Fade Ins
+@mixin fadeIn();
+@mixin fadeInUp();
+@mixin fadeInDown();
+@mixin fadeInLeft();
+@mixin fadeInRight();
+Fade outs
+@mixin fadeOut();
+@mixin fadeOutUp();
+@mixin fadeOutDown();
+@mixin fadeOutLeft();
+@mixin fadeOutRight();
+</code></pre>
+
+<h3>Example style</h3>
+
+<pre><code>header[role="banner"] {
+    @include flexWrapper();
+    @include center();  
+    @include clearstyle();
+
+    #logo {
+        @include col-6();
+
+        @include breakpoint(tablet-and-down) {
+            @include flexWrapper();
+            @include center();  
+            @include col-12();
+        }
+    }
+
+    nav[role="navigation"] {
+        @include col-6();
+
+        @include breakpoint(tablet-and-down) {
+            @include flexWrapper();
+            @include center();  
+            @include col-12();
+        }
+        ul {
+            li {
+                float: right;
+                display: inline-block;
+                &amp;:before {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+section#main {
+    @include flexWrapper();
+
+    aside[role="complementary"] { 
+        @include col-2();
+
+        @include breakpoint(tablet-and-down) {
+            @include col-12();
+        }
+    }
+
+    article[role="main"] {
+        @include col-10();
+
+        @include breakpoint(tablet-and-down) {
+            @include col-12();
+        }
+    }
+}
+
+footer[role="contentinfo"] { 
+    @include flexWrapper;
+    @include col-12;
+    @include center;
+}
+</code></pre>

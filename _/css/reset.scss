@@ -1,0 +1,117 @@
+/*! resets.scss | West */
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+body {
+	overflow-y: scroll!important; /* Force a vertical scrollbar to prevent a jumpy page */
+	overflow-x: hidden; /* Hide horizontal scroll when wrapping acts weird in IE and FF */
+}
+
+/* Defaults */
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+article, aside, figure, footer, header, hgroup, nav, section {
+	display: block;
+}
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites, like, say for Google Maps custom placemarkers.
+   There has been a report of problems with standard Google maps as well, but we haven't been able to duplicate or diagnose the issue. */
+
+/* Imgs */
+img, object, embed {
+	max-width: 100%;
+	height: auto;
+	padding: 0px;
+	display: block;
+}
+
+/* Embed
+ - Make embed content work responsive
+ */
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16/9 ratio */
+	padding-top: 30px; /* IE6 workaround*/
+	height: 0;
+	overflow: hidden;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* We use a lot of ULs that aren't bulleted. */
+ul {
+	list-style: none;
+}
+
+/* Lists in the content */
+.main-content {
+	ul, ol {
+		padding: 0 0 0 24px;
+	}
+	p {
+		& + ol {
+			// margin-top: -@indent-val; /* earases margin between paragraph and list */
+		}
+	}
+	ul {
+		list-style: disc; /* Bulleted ULs for content lists */
+	}
+	ol {
+
+	}
+	img {
+		//padding-top: @spacing50; /* earases margin between paragraph and list */
+	}
+	.entry > p:first-child {
+		img {
+			//padding-top: @spacing20; /* earases margin between paragraph and list */
+		}
+
+	}
+}
+
+/* Blockquote and the TypeKit margins */
+blockquote {
+	&:before {
+		content:"“";
+	}
+	&:after {
+		content:"”";
+	}
+	p {
+		display: inline;
+	}
+}
+
+p + blockquote {
+	margin: 0;
+	//margin-top: -@indent-val; /* earases margin between paragraph and list */
+}
+
+/* Away with the underline */
+a {
+	text-decoration: none;
+}
+
+/* Just a clear class */
+.clear {
+	clear: both;
+}

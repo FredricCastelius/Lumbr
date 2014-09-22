@@ -1,0 +1,99 @@
+/*! grid.scss by West */
+
+@mixin wrapper() { 
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+@mixin col-1() {
+  flex: 0 0 8.333%;
+}
+
+@mixin col-2() {
+  flex: 0 0 16.667%;
+}
+
+@mixin col-3() {
+  flex: 0 0 25%;
+}
+
+@mixin col-4() {
+  flex: 0 0 33.333%;
+}
+
+@mixin col-5() { 
+  flex: 0 0 41.667%;
+}
+
+@mixin col-6() {
+  flex: 0 0 50%;
+}
+
+@mixin col-7() {
+  flex: 0 0 58.333%;
+}
+
+@mixin col-8() {
+  flex: 0 0 66.667%;
+}
+
+@mixin col-9() {
+  flex: 0 0 75%;
+}
+
+@mixin col-10() {
+  flex: 0 0 83.333%;
+}
+
+@mixin col-11() {
+  flex: 0 0 91.667%;
+}
+
+@mixin col-12() { 
+  flex: 0 0 100%;
+}
+
+@mixin col-auto () {
+  flex: 1;
+}
+
+@mixin start() {
+  justify-content: flex-start;
+}
+
+@mixin center() {
+	justify-content: center;
+}
+
+@mixin end() {
+  justify-content: flex-end;
+}
+
+@mixin top() {
+  align-items: flex-start;
+}
+
+@mixin middle() {
+  align-items: center;
+}
+
+@mixin bottom() {
+  align-items: flex-end;
+}
+
+@mixin around() {
+  justify-content: space-around;
+}
+
+@mixin between() {
+  justify-content: space-between;
+}
+
+@mixin first() {
+  order: -1;
+}
+
+@mixin last() {
+  order: 1;
+}

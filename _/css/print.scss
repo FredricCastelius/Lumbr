@@ -1,0 +1,97 @@
+/*! Print Style by West */
+
+@media print {
+	/* Make article 100% width */
+	body, article {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		.container-fluid {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			.main-content {
+				width: 100%;
+			}
+		}
+	}
+
+	@page {
+		margin: 13cm;
+	}
+
+	body {
+		color: #000;
+		background: #fff;
+
+		h1 {
+			color: #000;
+			background: none;
+		}
+
+		nav, aside, #sidebar {
+			display: none;
+		}
+
+		h2, h3 {
+			page-break-after: avoid;
+		}
+
+		img {
+			max-width: 100% !important;
+		}
+
+		article {
+			page-break-after: always;
+		}
+
+		ul, img {
+			page-break-inside: avoid;
+		}
+		article a {
+			text-decoration: none;
+		}
+
+		article a[href^=http]:after {
+			content:" (" attr(href) ") ";
+		}
+
+		article a[href^="#"]:after {
+			content: "";
+		}
+		a:after > img {
+			content: "";
+		}
+		a:not(:local-link):after {
+			content:" (" attr(href) ") ";
+		}
+		header img {
+			filter: url(inverse.svg#negative);
+			-webkit-filter: invert(100%);
+			filter: invert(100%);
+		}
+		.breadcrumbs-wrapper {
+			display: none;
+		}
+		footer#main-footer {
+			display: none;
+		}
+		iframe, object {
+			display: none;
+		}
+		section#main-content {
+			width: 100%;
+		}
+	}
+	.col, #gridpak {
+		margin: 0!important; // defaulting grid
+		padding: 0!important; // defaulting grid
+	}
+}
+
+@media print and (color) {
+	* {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+}

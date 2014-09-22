@@ -1,0 +1,477 @@
+/*! liquid.scss by West */
+
+/* ?responsive breakpoint
+   ========================================================================== */
+
+// ?desktops
+$desktopWidth: 80em; // when desktops starts | twitter bootstrap default: 1200px
+$desktopLayoutBase: 120%; 
+
+// ?laptops
+$laptopWidth: 60em; // when laptops starts | twitter bootstrap default: 960px
+$laptopFontBaseSize: 100%;
+
+// ?phones
+$phoneWidth: 30em; // when phone ends | twitter bootstrap default: 767px
+$phoneFontBaseSize:  100%;
+
+// ?tablets
+$tabletWidth: $phoneWidth + 0.000001em; // when tablet starts | twitter bootstrap default: 768px
+$tabletFontBaseSize: 100%;
+
+$layoutMaxPoint: 1280px; // where fluid width stops
+
+/* ==========================================================================
+   ?body
+   ========================================================================== */
+
+body { // !main content
+	max-width: $layoutMaxPoint;
+	margin: 0 fnGetSpacing(100) 0 fnGetSpacing(100);
+	@media (min-width: $layoutMaxPoint) {
+		@include center-block;
+		width: $layoutMaxPoint;
+	}
+}
+
+/* ==========================================================================
+   ?base styles
+   ========================================================================== */
+
+// ?font
+$baseFont: 'Lato', sans-serif; // base font 
+$baseFontSpacing: fnGetSpacing(0); // font spacing 
+$baseFontWeight: 300; // font weight
+$baseFontColor: #000; // all regular text color 
+
+// ?headings
+$headingsFont: 'Lato', sans-serif; // Headings font | same as base font as default
+$headingsFontSpacing: fnGetSpacing(-4); // headings font spacing | same as base font as default
+$headingsFontWeight: bold; // headings font weight | same as base font as default
+$headingsFontColor: $baseFontColor; // headings font weight | same as base font as default
+
+// ?headings title | if you want special styles for the first H1
+$headingsTitleFontSize: 600%; 
+$headingsTitleFontLineHeight: $headingsFontSpacing; 
+$headingsTitleFontSpacing: $headingsFontSpacing; 
+$headingsTitleFont: $headingsFont; 
+$headingsTitleFontWeight: $headingsFontWeight; 
+
+// ?links 
+$linkColor: $baseFontColor; // all regular links color | default: $baseFontColor
+$linkBorderColor: rgba(0, 0, 0, 0.1); // link border color | default: rgba(0, 0, 0, 0.2) | suggestion: $baseFontColor, $bodyBackground
+
+// ?links hover
+$linkHoverColor: $baseFontColor; // link text color when hover | default: $baseFontColor
+$linkHoverBorderPosition: fnGetSpacing(12); // position of the border | default: fnGetSpacing(10)
+$linkHoverBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
+$linkHoverBorderColor: $baseFontColor; // border color | default: $baseFontColor
+$linkHoverBorderStyle: solid; // border style
+
+// ?links active
+$linkActiveColor: $baseFontColor; // color when clicking on link | default: $baseFontColor 
+
+// ?input
+$inputBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
+$inputBorderColor: #ccc; // border color | default: #ccc
+$inputBorderStyle: solid; // border style
+$inputBorderRadius: 2px; // border radius
+$inputFocusBorderColor: $inputBorderColor; // border when focusing on input field | default: $inputBorderColor
+
+// ?button 
+$buttonBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
+$buttonBackground: transparent;
+$buttonBorderColor: #999; // border color | default: #ccc
+$buttonBorderStyle: solid; // border style
+$buttonBorderRadius: 4px; // border radius
+$buttonFocusBorderColor: $buttonBorderColor; // border when focusing on input field | default: $inputBorderColor
+
+// ?button hover
+$buttonHoverColor: #fff;
+$buttonHoverBackground: #000;
+$buttonHoverBorderSize: fnGetSpacing(5);
+$buttonHoverBorderStyle: solid;
+$buttonHoverBorderColor: #111;
+
+// ?button active
+$buttonActiveBackground: #555;
+
+// ?animation speed
+$animationDuration: 500ms; // animation speed | when page loads animations
+
+// ?hover speed
+$hoverTransitionSpeed: 500ms; // transistion speed | when hover over something animations 
+
+html {
+
+	/* !responsive */
+ 	@media (max-width: $phoneWidth) {
+ 		font-size: $phoneFontBaseSize;
+ 	}
+
+ 	@media (min-width: $tabletWidth) {
+ 		font-size: $tabletFontBaseSize;
+ 	}
+
+ 	@media (min-width: $laptopWidth) {
+ 		font-size: $laptopFontBaseSize;
+ 	}
+
+ 	@media (min-width: $desktopWidth) {
+ 		font-size: $desktopLayoutBase;
+ 	}
+	
+	body {
+
+	 	/* !font */
+		font-family: $baseFont;
+		letter-spacing: $baseFontSpacing;
+		font-weight: $baseFontWeight;
+		color: $baseFontColor;
+		
+		h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a {
+			/* !headings */
+			font-family: $headingsFont;
+			letter-spacing: $headingsFontSpacing;
+			font-weight: $headingsFontWeight; // away with the auto headings boldness 
+			color: $headingsFontColor; // make the headings the same color as the regular text
+		}
+
+		/* !links */
+		a {
+			padding-bottom: $linkHoverBorderPosition;
+			color: $linkColor;
+			border-bottom: $linkHoverBorderSize $linkHoverBorderStyle $linkBorderColor;
+
+			transition: $hoverTransitionSpeed;
+			
+			&:hover {
+				border-bottom: $linkHoverBorderSize $linkHoverBorderStyle $linkHoverBorderColor;
+				color: $linkHoverColor; 
+			}
+			
+			&:active {
+				color: $linkActiveColor; 
+			}
+
+			&:link {
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0.1)!important; // iOS tap color
+			}
+		}
+
+		/* !select !textarea !input !button */
+		select, textarea, input, button {
+			color: $baseFontColor;
+			transition: $hoverTransitionSpeed;
+    		-webkit-appearance: none; // restoring default styles in iOS devices
+		}
+
+		input {
+			width: 98%;
+			padding: fnGetSpacing(38) 1% fnGetSpacing(44) 1%;
+			
+			color: $baseFontColor;
+			font-weight: $baseFontWeight;
+			
+			@media (max-width: $phoneWidth) {
+				width: 94%;
+				padding: fnGetSpacing(38) 3% fnGetSpacing(44) 3%;
+			}
+
+			border: $inputBorderSize $inputBorderStyle $inputBorderColor;
+			border-radius: $inputBorderRadius;
+			-webkit-border-radius: $inputBorderRadius;
+
+			&:focus {
+				border-color: $inputFocusBorderColor;
+				outline: 0;
+			}
+
+			transition: $hoverTransitionSpeed;
+		}
+
+		input[type="password"] { // input password
+			-webkit-text-security: disc;
+			padding: fnGetSpacing(41) 1% fnGetSpacing(39) 1%;
+		}
+
+		// !button
+		button {
+			padding: fnGetSpacing(43) fnGetSpacing(120) fnGetSpacing(49) fnGetSpacing(120);
+			margin: fnGetSpacing(100) 0 fnGetSpacing(100) 0;
+
+			background: $buttonBackground;
+			color: $baseFontColor;
+			font-weight: $baseFontWeight;
+
+			
+			border: $buttonBorderSize $buttonBorderStyle $buttonBorderColor;
+			border-radius: $buttonBorderRadius;
+			-webkit-border-radius: $buttonBorderRadius;
+
+			border-radius: $buttonBorderRadius;
+			display: inline-block;
+			text-align: center;
+			vertical-align: middle;
+			cursor: pointer;
+			white-space: nowrap;
+
+			// !button hover
+			&:hover {
+				color: $buttonHoverColor;
+				background: $buttonHoverBackground;
+				border: $buttonHoverBorderSize $buttonHoverBorderStyle $buttonHoverBorderColor;
+			}
+
+			// !button active
+			&:active {
+				background: $buttonActiveBackground;
+			}
+
+			transition: $hoverTransitionSpeed;
+		}
+
+		// !label
+		label {
+			margin: fnGetSpacing(50) 0 fnGetSpacing(50) 0;
+			display: block;
+		}
+
+	}
+}
+
+// ?selection
+$selectionBackground: rgba(0, 0, 0, 0.8); // Background color when text selected | Example code: rgba(0, 0, 0, 0.4)
+$selectionText: rgba(255, 255, 255, 1); // Font color when text selected | Example code: rgba(255, 255, 255, 1)
+$selectionTextShadow: none; // Text shadow when text selected | Example code: 1px 1px 1px #000
+
+// !selection
+::selection {
+	background: $selectionBackground;
+	color: $selectionText;
+	text-shadow: $selectionTextShadow;
+}
+
+::-webkit-selection {
+	background: $selectionBackground;
+	color: $selectionText;
+	text-shadow: $selectionTextShadow;
+}
+
+::-moz-selection {
+	background: $selectionBackground;
+	color: $selectionText;
+	text-shadow: $selectionTextShadow;
+}
+
+/* ?content
+   ========================================================================== */
+
+@mixin content() {
+	p {
+		margin-bottom: fnGetSpacing(200);
+		& + p {
+			text-indent: fnGetSpacing(0); // remove default text indention when new paragraph | overrides setting in TypePlate
+		}
+	}
+
+	h1, h2, h3 {
+		font-weight: $headingsFontWeight;
+		margin-left: fnGetSpacing(-1);
+	}
+
+	h4, h5, h6 {
+		font-weight: $headingsFontWeight;
+	}
+
+	h1 {
+		margin-bottom: fnGetSpacing(36);
+		line-height: fnGetSpacing(74);
+		letter-spacing: fnGetSpacing(-3);
+		
+		&#title {
+			font-size: $headingsTitleFontSize;
+			line-height: $headingsTitleFontLineHeight;
+			letter-spacing: $headingsTitleFontSpacing;
+			font-family: $headingsTitleFont;
+			font-weight: $headingsTitleFontWeight;
+		}
+	}
+
+	h2 {
+		margin-bottom: fnGetSpacing(34);
+		line-height: fnGetSpacing(80);
+	}
+
+	h3 {
+		margin-bottom: fnGetSpacing(46);
+		line-height: fnGetSpacing(90);
+	}
+
+	h4 {
+		margin-bottom: fnGetSpacing(70);
+		line-height: fnGetSpacing(94);
+	}
+
+	h5 {
+		margin-bottom: fnGetSpacing(90);
+		line-height: fnGetSpacing(96);
+	}
+
+	h6 {
+		margin-bottom: fnGetSpacing(108);
+		line-height: fnGetSpacing(96);
+	}
+
+	.indent {
+		margin-left: fnGetSpacing(100);
+	}
+
+	address {
+		margin-top: fnGetSpacing(-100);
+		margin-bottom: fnGetSpacing(100);
+	}
+
+	blockquote {
+		padding-bottom: fnGetSpacing(100);
+		&:before {
+			content: "“";
+		}
+		&:after {
+			content: "”";
+		}
+	}
+
+	p + blockquote {
+		margin-top: fnGetSpacing(-100);	
+	}
+
+	p + ul, ol {
+		margin-top: fnGetSpacing(-100);	
+	}
+
+	ul li {
+		&:before {
+	    content: "•";
+	    color: $baseFontColor;
+		margin-right: fnGetSpacing(50); 
+	    } 
+	}
+
+	ol {
+		margin-top: fnGetSpacing(100); 
+		margin-left: fnGetSpacing(90); 
+	}
+
+	// ?table
+	$tableBorderColor: #eee;
+	$tableBorderStyle: solid;
+	$tableBorderSize: fnGetSpacing(5);
+
+	// !table
+	table {
+		margin-top: fnGetSpacing(100); 
+		margin-bottom: fnGetSpacing(100); 
+		width: 100%;
+		text-align: left;
+		thead {
+				padding: fnGetSpacing(40);
+			tr {
+				background: none!important;
+			}
+		}
+		tr {
+			background: none;
+			border-top: $tableBorderSize $tableBorderStyle $tableBorderColor;
+			border-right: $tableBorderSize $tableBorderStyle $tableBorderColor;
+			border-bottom: $tableBorderSize $tableBorderStyle $tableBorderColor;
+			
+			&:nth-child(odd) {
+				background: none;
+			}
+
+			td, th {
+				border-left: $tableBorderSize $tableBorderStyle $tableBorderColor;	
+				width: 33%;
+				padding: fnGetSpacing(40);		
+			}
+
+			&:hover {
+				background: #e3e3e3;
+				transition: $hoverTransitionSpeed;
+				
+				td {
+					border-color: #e3e3e3;
+				}
+			}
+
+			transition: $hoverTransitionSpeed;
+		}
+	}
+
+	// !images
+	img {
+		padding: fnGetSpacing(80) 0 fnGetSpacing(50) 0;
+	}
+
+	p + img {
+		margin-top: fnGetSpacing(-250);
+	}
+
+	//!iframes
+	.fluid-width-video-wrapper {
+		margin-top: fnGetSpacing(100);
+		padding-top: 62.45%!important;
+		background: #fff!important;
+		overflow: hidden;
+		width: 99.9%!important;
+		position: relative;
+		padding: 0;
+		iframe {
+			left: -0.25%;
+			/* right: 1%; */
+			width: 100.5%;
+		}
+	}
+
+	mark {
+		background: $selectionBackground; // mark a text
+	}
+
+	code,
+	kbd,
+	pre,
+	samp { //?!code example
+	}
+
+	pre {
+		padding: 0 fnGetSpacing(100) fnGetSpacing(20) fnGetSpacing(100);
+		background: rgba(0, 0, 0, 0.1);
+		margin: 0 0 fnGetSpacing(100) 0;
+	}
+}
+/* !reset
+   ========================================================================== */
+
+@mixin reset() {
+	h1, h1#title, h2, h3, h4, h5, h6, p, pre, code, table, tr, td, th, img, blockquote, address, ul, ol, li, label, button, input, input[type="password"] {
+		font-size: 100%;
+		line-height: fnGetSpacing(100);
+		margin: 0;
+		padding: 0;	
+		letter-spacing: 0;
+		border-radius: 0;
+		text-align: left;
+	}
+
+	p {
+		& + p {
+			margin-top: fnGetSpacing(0);
+			text-indent: fnGetSpacing(0); // remove default text indention when new paragraph | overrides setting in TypePlate
+		}
+	}
+
+	ol {
+		margin-left: fnGetSpacing(90);
+	}
+}

@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+@function fnGetSpacing($multiple) { // elastic spacing function with em fallback
+	@return $indent-val * $multiple / 100;
+}
+
+// !responsiv breakpoints 
+@mixin breakpoint($point) { 
+	@if $point == desktop-and-up {
+		@media (min-width: $desktopWidth) { @content; }
+	}
+	@else if $point == laptop-to-desktop {
+		@media (min-width: $laptopWidth) and (max-width: $desktopWidth - 0.0001em)  { @content; }
+	}
+	@else if $point == laptop-and-up {
+		@media (min-width: $laptopWidth)  { @content; }
+	}
+	@else if $point == laptop-and-down {
+		@media (max-width: $laptopWidth - 0.0001em)  { @content; }
+	}
+	@else if $point == tablet-to-laptop {
+		@media (min-width: $tabletWidth) and (max-width: $laptopWidth - 0.0001em) { @content; }
+	}
+	@else if $point == tablet-and-up {
+		@media (min-width: $tabletWidth) { @content; }
+	}
+	@else if $point == tablet-and-down {
+		@media (max-width: $tabletWidth - 0.0001em) { @content; }
+	}
+	@else if $point == phone-to-tablet {
+		@media (min-width: $phoneWidth) and (max-width: $tabletWidth - 0.0001em) { @content; }
+	}
+	@else if $point == phone-and-up {
+		@media (min-width: $phoneWidth)  { @content; }
+	}
+	@else if $point == phone-and-down {
+		@media (max-width: $phoneWidth - 0.0001em)  { @content; }
+	}
+}
+
+// !center block
+@mixin center-block { 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// !absolute position
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+// !fixed position
+@mixin fixed-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) { 
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: fixed;
+}
+
+// !retina images
+@mixin image-2x($image, $width, $height) { // !retina mixin
+  	@media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    	background-image: url($image);
+    	background-size: $width $height;
+  }
+}
+
+// !opacity
+@mixin opacity($opacity) { 
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// !text truncate
+@mixin text-truncate { 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
