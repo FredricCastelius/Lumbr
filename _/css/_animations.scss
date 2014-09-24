@@ -1,25 +1,30 @@
-/*! animations.scss by daneden.me tweaked by Fredric Castelius */
+/*! Animations - source / inspired by http://daneden.github.io/animate.css/ */
 
 @mixin animate() {
-	animation-fill-mode:both;
+	animation-fill-mode: both;
 	animation-duration: $animationDuration;
 }
 
+// fade in
 @keyframes fadeIn {
-	0% {opacity: 0;}	
-	100% {opacity: 1;}
+	0% {
+		opacity: 0;
+	}	
+	100% {
+		opacity: 1;
+	}
 }
 
 @mixin fadeIn(){
 	animation-name: fadeIn;
 }
 
+// fade in and up
 @keyframes fadeInUp {
 	0% {
 		opacity: 0;
 		transform: translateY(20px);
 	}
-
 	100% {
 		opacity: 1;
 		transform: translateY(0);
@@ -30,12 +35,12 @@
 	animation-name: fadeInUp;
 }
 
+// fade in and down
 @keyframes fadeInDown {
 	0% {
 		opacity: 0;
 		transform: translateY(-20px);
 	}
-
 	100% {
 		opacity: 1;
 		transform: translateY(0);
@@ -43,18 +48,15 @@
 }
 
 @mixin fadeInDown() {
-	-webkit-animation-name: fadeInDown;
-	-moz-animation-name: fadeInDown;
-	-o-animation-name: fadeInDown;
 	animation-name: fadeInDown;
 }
 
+// fade in from left
 @keyframes fadeInLeft {
 	0% {
 		opacity: 0;
 		transform: translateX(-20px);
 	}
-
 	100% {
 		opacity: 1;
 		transform: translateX(0);
@@ -65,12 +67,12 @@
 	animation-name: fadeInLeft;
 }
 
+// fade in from right
 @keyframes fadeInRight {
 	0% {
 		opacity: 0;
 		transform: translateX(20px);
 	}
-
 	100% {
 		opacity: 1;
 		transform: translateX(0);
@@ -81,15 +83,21 @@
 	animation-name: fadeInRight;
 }
 
+// fade out
 @keyframes fadeOut {
-	0% {opacity: 1;}
-	100% {opacity: 0;}
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 
 @mixin fadeOut() {
 	animation-name: fadeOut;
 }
 
+// fade out and up
 @keyframes fadeOutUp {
 	0% {
 		opacity: 1;
@@ -106,12 +114,12 @@
 	animation-name: fadeOutUp;
 }
 
+// fade out and down
 @keyframes fadeOutDown {
 	0% {
 		opacity: 1;
 		transform: translateY(0);
 	}
-
 	100% {
 		opacity: 0;
 		transform: translateY(20px);
@@ -122,12 +130,12 @@
 	animation-name: fadeOutDown;
 }
 
+// fade out and left
 @keyframes fadeOutLeft {
 	0% {
 		opacity: 1;
 		transform: translateX(0);
 	}
-
 	100% {
 		opacity: 0;
 		transform: translateX(-20px);
@@ -138,12 +146,12 @@
 	animation-name: fadeOutLeft;
 }
 
+// fade out and right
 @keyframes fadeOutRight {
 	0% {
 		opacity: 1;
 		transform: translateX(0);
 	}
-
 	100% {
 		opacity: 0;
 		transform: translateX(20px);

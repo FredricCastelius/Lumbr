@@ -14,23 +14,49 @@ Goals to achieve with Lumber:
 * Good to print
 
 
-Mixins
+How to use
 -------
 
-### Responsive breakpoints
+### Breakpoints
 
-    @include breakpoint(laptop-and-under) { }
-    @include breakpoint(tablet-and-under) { }
-    @include breakpoint(phone-and-under) { }
+breakpoint(desktop) triggers desktop layout and above
+breakpoint(laptop) triggers laptop layout only
+breakpoint(tablet) triggers tablet only
+breakpoint(phone) triggers phone only
 
-    @include breakpoint(phone-to-tablet) { }
-    @include breakpoint(tablet-to-laptop) { }
-    @include breakpoint(laptop-to-desktop) { }
+    @include breakpoint(desktop) { 
+        
+    } 
+    @include breakpoint(laptop) { 
+        
+    } 
+    @include breakpoint(tablet) { 
+        
+    } 
+    @include breakpoint(phone) { 
+        
+    } 
 
-    @include breakpoint(phone-and-up) { }
-    @include breakpoint(tablet-and-up) { }
-    @include breakpoint(laptop-and-up) { }
-    @include breakpoint(desktop-and-up) { }
+breakpoint(laptopUp) triggers laptop layout and above
+breakpoint(laptopDown) triggers laptop layout and below
+breakpoint(tabletUp) triggers tablet and above
+
+    @include breakpoint(laptopUp) { 
+        
+    } 
+    @include breakpoint(laptopDown) { 
+        
+    } 
+    @include breakpoint(tabletUp) { 
+        
+    } 
+
+breakpoint(tabletDesktop) triggers tablet to desktop
+
+    @include breakpoint(tabletDesktop) { 
+        
+    } 
+
 
 ### Retina images
 

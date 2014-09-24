@@ -1,52 +1,47 @@
-/*! Functions by Fredric Castelius */
+/* ! Functions - including useful mixins */
 
+// workable elastic variable
 $paragraph-spacing: 1.5em; // text indentation value
 @function fnGetSpacing($multiple) { // elastic spacing function with em fallback
 	@return $paragraph-spacing * $multiple / 100;
 }
 
-// !responsiv breakpoints 
+// breakpoints 
 @mixin breakpoint($point) { 
-	@if $point == desktop-and-up {
+	@if $point == desktop {
 		@media (min-width: $desktopWidth) { @content; }
 	}
-	@else if $point == laptop-to-desktop {
-		@media (min-width: $laptopWidth) and (max-width: $desktopWidth - 0.0001em)  { @content; }
+	@else if $point == laptop {
+		@media (min-width: $laptopWidth) and (max-width: $desktopWidth - 1px)  { @content; }
 	}
-	@else if $point == laptop-and-up {
+	@else if $point == laptopUp {
 		@media (min-width: $laptopWidth)  { @content; }
 	}
-	@else if $point == laptop-and-down {
-		@media (max-width: $laptopWidth - 0.0001em)  { @content; }
+	@else if $point == laptopDown {
+		@media (max-width: $laptopWidth - 1px)  { @content; }
 	}
-	@else if $point == tablet-to-laptop {
-		@media (min-width: $tabletWidth) and (max-width: $laptopWidth - 0.0001em) { @content; }
+	@else if $point == tabletUp {
+		@media (min-width: $tabletWidth)  { @content; }
 	}
-	@else if $point == tablet-and-up {
-		@media (min-width: $tabletWidth) { @content; }
+	@else if $point == tabletDekstop {
+		@media (min-width: $tabletWidth) and (max-width: $desktopWidth - 1px)  { @content; }
 	}
-	@else if $point == tablet-and-down {
-		@media (max-width: $tabletWidth - 0.0001em) { @content; }
+	@else if $point == tablet {
+		@media (min-width: $tabletWidth) and (max-width: $laptopWidth - 1px) { @content; }
 	}
-	@else if $point == phone-to-tablet {
-		@media (min-width: $phoneWidth) and (max-width: $tabletWidth - 0.0001em) { @content; }
-	}
-	@else if $point == phone-and-up {
-		@media (min-width: $phoneWidth)  { @content; }
-	}
-	@else if $point == phone-and-down {
-		@media (max-width: $phoneWidth - 0.0001em)  { @content; }
+	@else if $point == phone {
+		@media (max-width: $phoneWidth)  { @content; }
 	}
 }
 
-// !center block
+// center block
 @mixin center-block { 
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-// !absolute position
+// absolute position
 @mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
   top: $top;
   right: $right;
@@ -55,7 +50,7 @@ $paragraph-spacing: 1.5em; // text indentation value
   position: absolute;
 }
 
-// !fixed position
+// fixed position
 @mixin fixed-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) { 
   top: $top;
   right: $right;
@@ -64,8 +59,8 @@ $paragraph-spacing: 1.5em; // text indentation value
   position: fixed;
 }
 
-// !retina images
-@mixin image-2x($image, $width, $height) { // !retina mixin
+// retina images
+@mixin image-2x($image, $width, $height) { 
   	@media (min--moz-device-pixel-ratio: 1.3),
          (-o-min-device-pixel-ratio: 2.6/2),
          (-webkit-min-device-pixel-ratio: 1.3),
@@ -73,17 +68,17 @@ $paragraph-spacing: 1.5em; // text indentation value
          (min-resolution: 1.3dppx) {
     	background-image: url($image);
     	background-size: $width $height;
-  }
+  	}
 }
 
-// !opacity
+// opacity
 @mixin opacity($opacity) { 
   opacity: $opacity;
   $opacity-ie: $opacity * 100;
   filter: alpha(opacity=$opacity-ie); //IE8
 }
 
-// !text truncate
+// text truncate
 @mixin text-truncate { 
   overflow: hidden;
   text-overflow: ellipsis;

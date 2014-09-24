@@ -1,22 +1,22 @@
-/*! Style Setting */
+/*! Settings - layout settings */
 
-// Base type
+// base type
 $font-weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 $type-scale-unit-value: rem; // typeScale unit
 
-// Paragraphs
+// paragraphs
 $paragraph-vertical-whitespace: true; // vertical space after paragragh
 $paragraph-spacing: fnGetSpacing(100); // paragraph spacing and indent value
 
-// Heading system
+// heading system
 $headings-hierarchy: true;
 $headings-in-two-sizes: false; 
 $headings-same-size: false;
 
-// Special headings
+// special headings
 $tera: 117; // 117 = 18 × 6.5
 $giga: 90; // 90 = 18 × 5
 $mega: 72; // 72 = 18 × 4
@@ -27,26 +27,26 @@ $delta: 24; // 24 = 18 × 1.3333
 $epsilon: 21; // 21 = 18 × 1.1667
 $zeta: 18; // 18 = 18 × 1
 
-// Icon font
+// icon font
 $icon-fonts: null; // ex.1) $icon-fonts: (icon-name); ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
 
-// Desktops
-$desktopWidth: 80em; // when desktops starts | twitter bootstrap default: 1200px
+// desktops
+$desktopWidth: 1200px; // when desktops starts | bootstrap default: 1200px
 $desktopLayoutBase: 150%; 
 
-// Laptops
-$laptopWidth: 60em; // when laptops starts | twitter bootstrap default: 960px
+// laptops
+$laptopWidth: 960px; // when laptops starts | bootstrap default: 960px
 $laptopFontBaseSize: 130%;
 
-// Phones
-$phoneWidth: 30em; // when phone ends | twitter bootstrap default: 767px
-$phoneFontBaseSize:  100%;
-
-// Tablets
-$tabletWidth: $phoneWidth + 0.000001em; // when tablet starts | twitter bootstrap default: 768px
+// tablets
+$tabletWidth: 768px ; // when tablet starts | bootstrap default: 768px
 $tabletFontBaseSize: 100%;
 
-// where fluid width stops
+// phones
+$phoneWidth: $tabletWidth - 1px; // when phone ends | bootstrap default: 767px
+$phoneFontBaseSize:  100%;
+
+// layout max point
 $layoutMaxPoint: 1280px; 
 
 // font
@@ -63,14 +63,14 @@ $headingsFontColor: $baseFontColor; // headings font weight | same as base font 
 $linkColor: $baseFontColor; // all regular links color | default: $baseFontColor
 $linkBorderColor: rgba(0, 0, 0, 0.05); // link border color | default: rgba(0, 0, 0, 0.05) | suggestion: $baseFontColor, $bodyBackground
 
-// links hover
+// links when hover
 $linkHoverColor: $baseFontColor; // link text color when hover | default: $baseFontColor
 $linkHoverBorderPosition: fnGetSpacing(12); // position of the border | default: fnGetSpacing(10)
 $linkHoverBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
 $linkHoverBorderColor: $baseFontColor; // border color | default: $baseFontColor
 $linkHoverBorderStyle: solid; // border style
 
-// links active
+// links when active
 $linkActiveColor: $baseFontColor; // color when clicking on link | default: $baseFontColor 
 
 // input
@@ -88,17 +88,17 @@ $buttonBorderStyle: solid; // border style
 $buttonBorderRadius: 4px; // border radius
 $buttonFocusBorderColor: $buttonBorderColor; // border when focusing on input field | default: $inputBorderColor
 
-// button hover
+// button when hover
 $buttonHoverColor: #fff;
 $buttonHoverBackground: #000;
 $buttonHoverBorderSize: fnGetSpacing(5);
 $buttonHoverBorderStyle: solid;
 $buttonHoverBorderColor: #111;
 
-// button active
+// button when active
 $buttonActiveBackground: #555;
 
-// ?tables
+// tables
 $tableBorderColor: #eee;
 $tableBorderStyle: solid;
 $tableBorderSize: fnGetSpacing(5);
@@ -107,4 +107,4 @@ $tableBorderSize: fnGetSpacing(5);
 $animationDuration: 500ms; // animation speed | when page loads animations
 
 // hover speed
-$hoverTransitionSpeed: 500ms; // transistion speed | when hover over something animations 
+$hoverTransitionSpeed: 500ms; // transistion speed | when hover over something animations

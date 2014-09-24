@@ -15,22 +15,49 @@
 </ul>
 
 
-<h2>Mixins</h2>
+<h2>How to use</h2>
 
-<h3>Responsive breakpoints</h3>
+<h3>Breakpoints</h3>
 
-<pre><code>@include breakpoint(laptop-and-under) { }
-@include breakpoint(tablet-and-under) { }
-@include breakpoint(phone-and-under) { }
+<p>breakpoint(desktop) triggers desktop layout and above
+breakpoint(laptop) triggers laptop layout only
+breakpoint(tablet) triggers tablet only
+breakpoint(phone) triggers phone only</p>
 
-@include breakpoint(phone-to-tablet) { }
-@include breakpoint(tablet-to-laptop) { }
-@include breakpoint(laptop-to-desktop) { }
+<pre><code>@include breakpoint(desktop) { 
 
-@include breakpoint(phone-and-up) { }
-@include breakpoint(tablet-and-up) { }
-@include breakpoint(laptop-and-up) { }
-@include breakpoint(desktop-and-up) { }
+} 
+@include breakpoint(laptop) { 
+
+} 
+@include breakpoint(tablet) { 
+
+} 
+@include breakpoint(phone) { 
+
+} 
+</code></pre>
+
+<p>breakpoint(laptopUp) triggers laptop layout and above
+breakpoint(laptopDown) triggers laptop layout and below
+breakpoint(tabletUp) triggers tablet and above</p>
+
+<pre><code>@include breakpoint(laptopUp) { 
+
+} 
+@include breakpoint(laptopDown) { 
+
+} 
+@include breakpoint(tabletUp) { 
+
+} 
+</code></pre>
+
+<p>breakpoint(tabletDesktop) triggers tablet to desktop</p>
+
+<pre><code>@include breakpoint(tabletDesktop) { 
+
+} 
 </code></pre>
 
 <h3>Retina images</h3>
