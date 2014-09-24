@@ -17,6 +17,118 @@ Goals to achieve with Lumber:
 How to use
 -------
 
+For a head start on your next project we've located all key components for you in the settings.scss file. This is how it looks:
+
+    // base type
+    $font-weight: normal;
+    $line-height: 1.65;
+    $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+    $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+    $type-scale-unit-value: rem; // typeScale unit
+
+    // paragraphs
+    $paragraph-vertical-whitespace: true; // vertical space after paragragh
+    $paragraph-spacing: fnGetSpacing(100); // paragraph spacing and indent value
+
+    // heading system
+    $headings-hierarchy: true;
+    $headings-in-two-sizes: false; 
+    $headings-same-size: false;
+
+    // special headings
+    $tera: 117; // 117 = 18 × 6.5
+    $giga: 90; // 90 = 18 × 5
+    $mega: 72; // 72 = 18 × 4
+    $alpha: 60; // 60 = 18 × 3.3333
+    $beta: 48; // 48 = 18 × 2.6667
+    $gamma: 36; // 36 = 18 × 2
+    $delta: 24; // 24 = 18 × 1.3333
+    $epsilon: 21; // 21 = 18 × 1.1667
+    $zeta: 18; // 18 = 18 × 1
+
+    // icon font
+    $icon-fonts: null; // ex.1) $icon-fonts: (icon-name); ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+
+    // desktops
+    $desktopWidth: 1200px; // when desktops starts
+    $desktopLayoutBase: 150%; 
+
+    // laptops
+    $laptopWidth: 960px; // when laptops starts
+    $laptopFontBaseSize: 130%;
+
+    // tablets
+    $tabletWidth: 768px ; // when tablet starts
+    $tabletFontBaseSize: 100%;
+
+    // phones
+    $phoneWidth: $tabletWidth - 1px; // when phone ends
+    $phoneFontBaseSize:  100%;
+
+    // layout max point
+    $layoutMaxPoint: 1280px; 
+
+    // fonts
+    $headingsFont: Sans; // Headings font | same as base font as default
+    $baseFont: sans-serif; // base font 
+    $headingsFontSpacing: fnGetSpacing(-4); // headings font spacing | same as base font as default
+    $baseFontSpacing: fnGetSpacing(0); // base font letter spacing 
+    $headingsFontWeight: bold; // headings font weight | same as base font as default
+    $baseFontWeight: 300; // base font weight
+    $baseFontColor: #000; // all regular text color 
+    $headingsFontColor: $baseFontColor; // headings font weight | same as base font as default
+
+    // links 
+    $linkColor: $baseFontColor; // all regular links color | default: $baseFontColor
+    $linkBorderColor: rgba(0, 0, 0, 0.05); // link border color | default: rgba(0, 0, 0, 0.05) | suggestion: $baseFontColor, $bodyBackground
+
+    // links when hover
+    $linkHoverColor: $baseFontColor; // link text color when hover | default: $baseFontColor
+    $linkHoverBorderPosition: fnGetSpacing(12); // position of the border | default: fnGetSpacing(10)
+    $linkHoverBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
+    $linkHoverBorderColor: $baseFontColor; // border color | default: $baseFontColor
+    $linkHoverBorderStyle: solid; // border style
+
+    // links when active
+    $linkActiveColor: $baseFontColor; // color when clicking on link | default: $baseFontColor 
+
+    // inputs
+    $inputBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
+    $inputBorderColor: #ccc; // border color | default: #ccc
+    $inputBorderStyle: solid; // border style
+    $inputBorderRadius: 2px; // border radius
+    $inputFocusBorderColor: $inputBorderColor; // border when focusing on input field | default: $inputBorderColor
+
+    // buttons
+    $buttonBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
+    $buttonBackground: transparent;
+    $buttonBorderColor: #999; // border color | default: #ccc
+    $buttonBorderStyle: solid; // border style
+    $buttonBorderRadius: 4px; // border radius
+    $buttonFocusBorderColor: $buttonBorderColor; // border when focusing on input field | default: $inputBorderColor
+
+    // buttons when hover
+    $buttonHoverColor: #fff;
+    $buttonHoverBackground: #000;
+    $buttonHoverBorderSize: fnGetSpacing(5);
+    $buttonHoverBorderStyle: solid;
+    $buttonHoverBorderColor: #111;
+
+    // buttons when active
+    $buttonActiveBackground: #555;
+
+    // tables
+    $tableBorderColor: #eee;
+    $tableBorderStyle: solid;
+    $tableBorderSize: fnGetSpacing(5);
+
+    // animation speed
+    $animationDuration: 500ms; // animation speed | when page loads animations
+
+    // hover speed
+    $hoverTransitionSpeed: 500ms; // transistion speed | when hover over something animations
+
+
 ### Breakpoints
 
 breakpoint(desktop) triggers desktop layout and above
