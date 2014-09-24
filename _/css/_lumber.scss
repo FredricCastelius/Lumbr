@@ -1,5 +1,7 @@
 /*! lumber.scss by Fredric Castelius */
 
+// responsive breakpoint for phone
+$phoneWidth: $tabletWidth - 1px; // when phone ends
 
 // Typographic settings
 @if $headings-hierarchy == true {

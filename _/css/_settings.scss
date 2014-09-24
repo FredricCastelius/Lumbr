@@ -1,11 +1,28 @@
-/*! Settings - layout settings */
+/*! Settings */
+
+// desktops
+$desktopWidth: 1200px; // when desktops starts
+$desktopLayoutBase: 150%; // general font size and layout spacing
+
+// laptops
+$laptopWidth: 960px; // when laptops starts
+$laptopFontBaseSize: 130%; // general font size and layout spacing
+
+// tablets
+$tabletWidth: 768px ; // when tablet starts
+$tabletFontBaseSize: 120%; // general font size and layout spacing
+
+// phones
+$phoneFontBaseSize: 140%; // general font size and layout spacing
+
+// layout max point
+$layoutMaxPoint: 1280px; 
 
 // base type
 $font-weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
-$type-scale-unit-value: rem; // typeScale unit
 
 // paragraphs
 $paragraph-vertical-whitespace: true; // vertical space after paragragh
@@ -16,38 +33,8 @@ $headings-hierarchy: true;
 $headings-in-two-sizes: false; 
 $headings-same-size: false;
 
-// special headings
-$tera: 117; // 117 = 18 × 6.5
-$giga: 90; // 90 = 18 × 5
-$mega: 72; // 72 = 18 × 4
-$alpha: 60; // 60 = 18 × 3.3333
-$beta: 48; // 48 = 18 × 2.6667
-$gamma: 36; // 36 = 18 × 2
-$delta: 24; // 24 = 18 × 1.3333
-$epsilon: 21; // 21 = 18 × 1.1667
-$zeta: 18; // 18 = 18 × 1
-
 // icon font
 $icon-fonts: null; // ex.1) $icon-fonts: (icon-name); ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
-
-// desktops
-$desktopWidth: 1200px; // when desktops starts | bootstrap default: 1200px
-$desktopLayoutBase: 150%; 
-
-// laptops
-$laptopWidth: 960px; // when laptops starts | bootstrap default: 960px
-$laptopFontBaseSize: 130%;
-
-// tablets
-$tabletWidth: 768px ; // when tablet starts | bootstrap default: 768px
-$tabletFontBaseSize: 100%;
-
-// phones
-$phoneWidth: $tabletWidth - 1px; // when phone ends | bootstrap default: 767px
-$phoneFontBaseSize:  100%;
-
-// layout max point
-$layoutMaxPoint: 1280px; 
 
 // font
 $headingsFont: Sans; // Headings font | same as base font as default
@@ -108,3 +95,11 @@ $animationDuration: 500ms; // animation speed | when page loads animations
 
 // hover speed
 $hoverTransitionSpeed: 500ms; // transistion speed | when hover over something animations
+
+/*! Advanced settings */
+
+// responsive breakpoint for phone
+$phoneWidth: $tabletWidth - 1px; // when phone ends
+
+// typeScale unit
+$type-scale-unit-value: rem; 
