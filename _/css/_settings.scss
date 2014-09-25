@@ -13,15 +13,15 @@ $tabletWidth: 768px ; // when tablet starts
 $tabletFontBaseSize: 120%; // general font size and layout spacing
 
 // phones
-$phoneFontBaseSize: 140%; // general font size and layout spacing
+$phoneFontBaseSize: 120%; // general font size and layout spacing
 
 // layout max point
-$layoutMaxPoint: 1280px; 
+$layoutMaxPoint: 1300px; 
 
 // base type
-$font-weight: normal;
+$font-weight: 300;
 $line-height: 1.65;
-$font-size: 112.5; // percentage value (16 * 112.5% = 18px)
+$font-size: 80; // percentage value (16 * 112.5% = 18px)
 $font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
 
 // paragraphs
@@ -65,7 +65,7 @@ $inputBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
 $inputBorderColor: #ccc; // border color | default: #ccc
 $inputBorderStyle: solid; // border style
 $inputBorderRadius: 2px; // border radius
-$inputFocusBorderColor: $inputBorderColor; // border when focusing on input field | default: $inputBorderColor
+$inputFocusBorderColor: #333; // border when focusing on input field | default: $inputBorderColor
 
 // button 
 $buttonBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed

@@ -1,1 +1,80 @@
- 
+header {
+
+ 	@include wrapper();
+ 	@include middle();
+ 	margin-top: fnGetSpacing(50);
+
+ 	#logo {
+ 		@include col-3();
+ 	}
+
+ 	nav[role="navigation"] {
+ 		@include col-9();
+ 		ul {
+ 			float: right;
+ 			li {
+ 				float: left;
+ 				margin-left: fnGetSpacing(50);
+ 			}
+ 		}
+ 	}
+ }
+
+ main {
+ 	margin-top: fnGetSpacing(100);
+
+ 	@include breakpoint(laptopUp) {
+ 		@include wrapper();
+ 		@include top();
+ 	}
+
+ 	@include breakpoint(laptopDown) {
+ 		float: left;
+ 	}
+
+ 	article {
+	 	@include breakpoint(laptopUp) {
+	 		flex: 1;
+	 	}
+	 	@include breakpoint(laptopDown) {
+	 		
+	 	}
+ 	}
+
+ 	aside {
+ 		margin-left: fnGetSpacing(100);
+ 		text-align: center;
+ 		background: rgba(0, 0, 0, 0.05);
+	 	padding: fnGetSpacing(100) fnGetSpacing(200) fnGetSpacing(100) fnGetSpacing(200);
+	 	@include breakpoint(laptopUp) {
+	 		@include last();
+ 		}
+	 	@include breakpoint(laptopDown) {
+	 		float: right;
+	 	}
+	 	@include breakpoint(phone) {
+	 		width: 90%;
+	 		margin-left: 0;
+	 		padding: fnGetSpacing(100) 5% fnGetSpacing(100) 5%;
+			margin-bottom: fnGetSpacing(20);
+	 		float: left;
+	 		text-align: left;
+	 		ul {
+	 			li {
+	 				float: left;
+	 				margin-right: fnGetSpacing(20);
+	 			}
+	 		}
+	 	}
+ 	}
+ }
+
+footer {
+	@include wrapper();
+	@include center();
+	flex: 1;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.02);
+	padding: fnGetSpacing(100);
+	margin: fnGetSpacing(100) 0 fnGetSpacing(100) 0;
+}

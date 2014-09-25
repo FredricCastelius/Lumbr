@@ -1,8 +1,5 @@
 /*! lumber.scss by Fredric Castelius */
 
-// responsive breakpoint for phone
-$phoneWidth: $tabletWidth - 1px; // when phone ends
-
 // Typographic settings
 @if $headings-hierarchy == true {
 	// default heading
@@ -26,10 +23,11 @@ $phoneWidth: $tabletWidth - 1px; // when phone ends
 // Body
 body { // !main content
 	max-width: $layoutMaxPoint;
-	margin: 0 fnGetSpacing(100) 0 fnGetSpacing(100);
-	@media (min-width: $layoutMaxPoint) {
+	margin: 0 2.5% 0 2.5%;
+	@media (min-width: $layoutMaxPoint - 20px) {
 		@include center-block;
-		width: $layoutMaxPoint;
+		width: 95%;
+		max-width: $layoutMaxPoint;
 	}
 }
 
@@ -77,7 +75,7 @@ html {
 			color: $linkColor;
 			border-bottom: $linkHoverBorderSize $linkHoverBorderStyle $linkBorderColor;
 
-			transition: $hoverTransitionSpeed;
+			transition: all $hoverTransitionSpeed ease;
 			
 			&:hover {
 				border-bottom: $linkHoverBorderSize $linkHoverBorderStyle $linkHoverBorderColor;
@@ -101,16 +99,17 @@ html {
 		}
 
 		input {
-			width: 98%;
-			padding: fnGetSpacing(38) 1% fnGetSpacing(44) 1%;
+			width: 97%;
+			padding: fnGetSpacing(38) 1.5% fnGetSpacing(44) 1.5%;
 			
+			font-family: $baseFont;
 			color: $baseFontColor;
 			font-weight: $baseFontWeight;
 			
-			@media (max-width: $phoneWidth) {
+			/*@media (max-width: $phoneWidth) {
 				width: 94%;
 				padding: fnGetSpacing(38) 3% fnGetSpacing(44) 3%;
-			}
+			}*/
 
 			border: $inputBorderSize $inputBorderStyle $inputBorderColor;
 			border-radius: $inputBorderRadius;
@@ -126,7 +125,8 @@ html {
 
 		input[type="password"] { // input password
 			-webkit-text-security: disc;
-			padding: fnGetSpacing(41) 1% fnGetSpacing(39) 1%;
+			padding-top: fnGetSpacing(41);
+			padding-bottom: fnGetSpacing(39);
 		}
 
 		// !button
@@ -134,9 +134,10 @@ html {
 			padding: fnGetSpacing(43) fnGetSpacing(120) fnGetSpacing(49) fnGetSpacing(120);
 			margin: fnGetSpacing(100) 0 fnGetSpacing(100) 0;
 
+			font-family: $baseFont;
 			background: $buttonBackground;
 			color: $baseFontColor;
-			font-weight: $baseFontWeight;
+			font-weight: $font-weight;
 
 			
 			border: $buttonBorderSize $buttonBorderStyle $buttonBorderColor;
@@ -341,7 +342,7 @@ article {
 
 	// !images
 	img, .size-full, .size-large {
-		margin: fnGetSpacing(100) 0 fnGetSpacing(100) 0;
+		margin: fnGetSpacing(50) 0 fnGetSpacing(50) 0;
 		width: 100%;
 	}
 
@@ -361,6 +362,11 @@ article {
 		width: 28%;
 		margin-left: 5.33% * 0.5;
 		margin-right: 5.33% * 0.5;
+		@include breakpoint(phone) {
+			width: 50% - 5.33!important;
+			margin-left: 5.33% * 0.5;
+			margin-right: 5.33% * 0.5;
+		}
 		&.alignright {
 			margin-right: 0;
 		}
@@ -420,11 +426,11 @@ article {
 	}*/
 
 	p + img {
-		margin-top: 0;
+		margin-top: fnGetSpacing(-50)!important;
 	}
 
 	p + .wp-caption img {
-		margin-top: 0;
+		margin-top: fnGetSpacing(-50)!important;
 	}
 
 	//!iframes
@@ -444,7 +450,7 @@ article {
 	}
 
 	mark {
-		background: $selectionBackground; // mark a text
+		background: rgba(0, 0, 0, 0.09); // mark a text
 	}
 
 	code,
@@ -454,7 +460,7 @@ article {
 	}
 
 	pre {
-		padding: 0 fnGetSpacing(100) 0 fnGetSpacing(100);
+		padding: 0;
 		background: rgba(0, 0, 0, 0.1);
 		margin: 0 0 fnGetSpacing(100) 0;
 	}
