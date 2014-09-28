@@ -460,9 +460,12 @@ article {
 	}
 
 	pre {
-		padding: 0;
-		background: rgba(0, 0, 0, 0.1);
+		padding: 0 fnGetSpacing(150);
+		background: rgba(0, 0, 0, 0.8);
 		margin: 0 0 fnGetSpacing(100) 0;
+		code {
+			color: #fff;
+		}
 	}
 }
 

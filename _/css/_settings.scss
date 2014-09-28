@@ -2,21 +2,21 @@
 
 // desktops
 $desktopWidth: 1200px; // when desktops starts
-$desktopLayoutBase: 150%; // general font size and layout spacing
+$desktopLayoutBase: 130%; // general font size and layout spacing
 
 // laptops
 $laptopWidth: 960px; // when laptops starts
-$laptopFontBaseSize: 130%; // general font size and layout spacing
+$laptopFontBaseSize: 120%; // general font size and layout spacing
 
 // tablets
 $tabletWidth: 768px ; // when tablet starts
-$tabletFontBaseSize: 120%; // general font size and layout spacing
+$tabletFontBaseSize: 110%; // general font size and layout spacing
 
 // phones
 $phoneFontBaseSize: 120%; // general font size and layout spacing
 
 // layout max point
-$layoutMaxPoint: 1300px; 
+$layoutMaxPoint: 1100px; 
 
 // base type
 $font-weight: 300;
@@ -37,9 +37,9 @@ $headings-same-size: false;
 $icon-fonts: null; // ex.1) $icon-fonts: (icon-name); ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
 
 // font
-$headingsFont: Sans; // Headings font | same as base font as default
+$headingsFont: 'Raleway'; // Headings font | same as base font as default
 $baseFont: sans-serif; // base font 
-$headingsFontSpacing: fnGetSpacing(-4); // headings font spacing | same as base font as default
+$headingsFontSpacing: fnGetSpacing(-2); // headings font spacing | same as base font as default
 $baseFontSpacing: fnGetSpacing(0); // base font letter spacing 
 $headingsFontWeight: bold; // headings font weight | same as base font as default
 $baseFontWeight: 300; // base font weight
