@@ -1,47 +1,17 @@
-#bg {
-	position: absolute;
-	top: 0; 
-	left: 0;
-	float: left;
-	height: 100vh;
-	width: 100%;
-	background: url("_/content/cover.jpg") no-repeat;
-	background-size: cover;
-	z-index: -2;
-	@include animate();
-	@include fadeIn();
-	animation-delay: 0.2s;
-}
-
-#bg-overlayer {
-	position: absolute;
-	top: 0; 
-	left: 0;
-	float: left;
-	height: 100vh;
-	width: 100%;
-	background: rgba(0, 0, 0, 0.7);
-	background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(255,255,255,1) 100%);
-	z-index: -1;
-	@include animate();
-	@include fadeIn();
-	animation-delay: 0.2s;
-}
-
 header {
 
  	@include wrapper();
  	@include middle();
+	height: 15vh;
+ 	
  	clear: both;
-	
-	@include animate();
-	@include fadeInDown();
-	animation-delay: 1s;
 
  	#logo {
  		@include col-2();
- 		color: #fff;
  		font-weight: bold;
+ 		a {
+ 			border: none;
+ 		}
  	}
 
  	nav[role="navigation"] {
@@ -52,17 +22,12 @@ header {
  				float: right;
  				margin-left: fnGetSpacing(50);
  				a {
- 					color: #fff;
+ 					
  					font-size: 80%;
- 					border-color: rgba(255, 255, 255, 0);
- 					&:hover {
- 						border-color: rgba(255, 255, 255, 0.2);
- 					}
  				}
  			}
  		}
  	}
-	height: 15vh;
  }
 
  #hero {
@@ -70,17 +35,15 @@ header {
 	@include middle();
 	height: 70vh;
  	div {
+		max-width: 700px;
 	 	text-align: left;
- 		color: #fff;
 	 	h1 {
-	 		color: #fff;
 	 		@include animate();
 	 		@include fadeInLeft();
 	 		font-size: 340%;
 	 	}
 	 	h2 {
 	 		font-weight: 300;
-	 		color: #fff;
 	 		font-size: 240%;
 	 		@include animate();
 	 		@include fadeInLeft();
@@ -88,190 +51,34 @@ header {
 	 	}
 	 	h4 {
 	 		font-weight: bold;
-	 		color: #fff;
 	 		font-size: 120%;
 	 	}
-	 	button {
-	 		border-color: rgba(255, 255, 255, 0.8);
-	 		margin-top: fnGetSpacing(40);
-	 		color: #fff;
-	 		&:hover {
-	 			border-color: rgba(255, 255, 255, 1);
-	 			background: rgba(255, 255, 255, 0.2);
-	 		}
+	 	a {
 	 		@include animate();
 	 		@include fadeInLeft();
+	 		margin-top: fnGetSpacing(25);
 	 		animation-delay: 600ms;float: left;
 	 		clear: both;
-	 	}	
-	 	/*a {
-	 		color: #fff;
-	 		margin-top: fnGetSpacing(40);
-	 		float: left;
-	 		clear: both;
-	 		border-color: rgba(255, 255, 255, 0);
-	 		font-weight: 400;
+	 		border: 1px solid #999;
+	 		padding: fnGetSpacing(50);
+	 		border-radius: 3px;
 	 		&:hover {
-	 			border-color: rgba(255, 255, 255, 1);
+	 			background: #000;
+	 			color: #fff;
+	 			border: #000;
 	 		}
-	 	}*/
+	 	}	
  	}
 }
 
- main {
- 	margin-top: 15vh;
- 	padding-top: fnGetSpacing(100);
-	z-index: 1;
+main {
+	@include animate();
+	@include fadeInUp();
 
- 	@include breakpoint(laptopUp) {
- 		@include wrapper();
- 		@include top();
- 	}
+	max-width: 700px;
 
- 	@include breakpoint(laptopDown) {
- 		float: left;
- 	}
-
- 	article {
-	 	@include breakpoint(laptopUp) {
-	 		flex: 1;
-	 	}
-	 	@include breakpoint(laptopDown) {
-	 		
-	 	}
-	 	& > ul {
-	 		column-count: 3;
-	 	}
-	 	pre {
-	 		width: 50%;
-	 		float: left;
-	 		margin-right: fnGetSpacing(100);
-	 	}
-	 	video {
-	 		width: 100%;
-	 	}
-	 	section {
- 			@include wrapper();
- 			@include top();
-	 		div {
-	 			flex: 1;
-	 			margin-top: fnGetSpacing(100);
-	 		}
-	 		pre {
-	 			flex: 1;
-	 		}
-	 		clear: both;
- 			margin-top: fnGetSpacing(100);
- 			margin-bottom: fnGetSpacing(100);
- 			float: left;
-	 	}
-	 	section#breakpoints {
-
-	 	}
-	 	section#typography, #files, #input, #tables, #animation-speed {
-	 		@include reverse();
-	 		pre {
-	 			@include start();
-	 			margin-left: fnGetSpacing(100);
-	 			margin-right: fnGetSpacing(0);
-	 		}
-	 	}
-	 	.section {
-	 		@include wrapper();
-	 		float: left;
-	 		section {
-	 			flex: 1;
-	 		}
-	 		section#animation-speed {
-	 			div {
-	 				margin-left: fnGetSpacing(100);
-	 			}
-	 		}
-	 	}
-	 	#example-grid-1 {
-		    @include wrapper();
-		    aside {
-		        width: 200px; // elastic spacing
-		        margin: 0 fnGetSpacing(100) 0 0; // elastic spacing
-		        padding: fnGetSpacing(100); // elastic spacing
-		        background: rgba(0, 0, 0, 0.05);
-		    }
-		    article {
-		        flex: 1; // calculate the size for me !
-		        padding: fnGetSpacing(100); // elastic spacing
-		        background: rgba(0, 0, 0, 0.05);
-		    } 
-	 	}
-	 	#example-grid-2 {
-		    @include wrapper();
-		    aside {
-		        width: 200px; // elastic spacing
-		        margin: 0 fnGetSpacing(100) 0 0; // elastic spacing
-		        padding: fnGetSpacing(100); // elastic spacing
-		        background: rgba(0, 0, 0, 0.05);
-		    }
-		    article {
-		        flex: 1; // calculate the size for me !
-		        padding: fnGetSpacing(100); // elastic spacing
-		        background: rgba(0, 0, 0, 0.05);
-		    } 
-	 	}
-	 	#example-grid-2 {
-		    @include wrapper();
-		    @include middle();
-		    aside {
-		        width: 200px; // elastic spacing
-		        margin: 0 fnGetSpacing(100) 0 0; // elastic spacing
-		        padding: fnGetSpacing(100); // elastic spacing
-		        background: rgba(0, 0, 0, 0.1);
-		    }
-		    article {
-		        flex: 1; // calculate the size for me !
-		        padding: fnGetSpacing(100); // elastic spacing
-		        background: rgba(0, 0, 0, 0.1);
-		    } 
-	 	}
-	 	#example-grid-3 {
-	 		header {
-	 			@include wrapper();
-		    	@include middle();
-	 			logo {
-
-	 			}
-	 		}
-	 	}
-	 	#vertical-alignment, #grids, #traiggerviewports {
-	 		h4 {
-	 			width: 100%;
-	 			float: left;
-
-	 		}
-	 		pre {
-	 			code {
-	 			}
-	 		}
-	 		p {
-	 			margin-left: 0;
-	 		}
-	 	}
-	 	#traiggerviewports {
-	 		@include wrapper();
-	 		float: left;
-	 		pre {
-	 			flex: 1;
-	 		}
-	 		p {
-	 			display: none;
-	 		}
-	 	}
- 	}
- }
-
-footer {
-	@include wrapper();
-	@include center();
-	flex: 1;
-	text-align: center;
-	padding: fnGetSpacing(100);
-	margin: fnGetSpacing(100) 0 fnGetSpacing(100) 0;
+	margin: fnGetSpacing(200) auto 0 auto;
+	#title {
+		margin-bottom: fnGetSpacing(50);
+	}
 }

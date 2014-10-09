@@ -2,7 +2,7 @@
 
 // desktops
 $desktopWidth: 1200px; // when desktops starts
-$desktopLayoutBase: 130%; // general font size and layout spacing
+$desktopLayoutBase: 120%; // general font size and layout spacing
 
 // laptops
 $laptopWidth: 960px; // when laptops starts
@@ -13,7 +13,7 @@ $tabletWidth: 768px ; // when tablet starts
 $tabletFontBaseSize: 110%; // general font size and layout spacing
 
 // phones
-$phoneFontBaseSize: 120%; // general font size and layout spacing
+$phoneFontBaseSize: 130%; // general font size and layout spacing
 
 // layout max point
 $layoutMaxPoint: 1180px; 
@@ -37,10 +37,10 @@ $headings-same-size: false;
 $icon-fonts: null; // ex.1) $icon-fonts: (icon-name); ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
 
 // font
-$headingsFont: Raleway; // Headings font | same as base font as default
+$headingsFont: Sans-Serif; // Headings font | same as base font as default
 $baseFont: Sans-Serif; // base font 
 
-$headingsFontSpacing: fnGetSpacing(-2); // headings font spacing | same as base font as default
+$headingsFontSpacing: fnGetSpacing(-4); // headings font spacing | same as base font as default
 $baseFontSpacing: fnGetSpacing(0); // base font letter spacing 
 
 $headingsFontWeight: bold; // headings font weight | same as base font as default
@@ -64,14 +64,14 @@ $linkHoverBorderStyle: solid; // border style
 $linkActiveColor: $baseFontColor; // color when clicking on link | default: $baseFontColor 
 
 // input 
-$inputBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
+$inputBorderSize: 1px; // size of border | suggestion value: dashed
 $inputBorderColor: #ccc; // border color | default: #ccc
 $inputBorderStyle: solid; // border style
 $inputBorderRadius: 2px; // border radius
 $inputFocusBorderColor: #333; // border when focusing on input field | default: $inputBorderColor
 
 // button 
-$buttonBorderSize: fnGetSpacing(5); // size of border | suggestion value: dashed
+$buttonBorderSize: 1px; // size of border | suggestion value: dashed
 $buttonBackground: transparent;
 $buttonBorderColor: #999; // border color | default: #ccc
 $buttonBorderStyle: solid; // border style
@@ -81,7 +81,7 @@ $buttonFocusBorderColor: $buttonBorderColor; // border when focusing on input fi
 // button when hover
 $buttonHoverColor: #fff;
 $buttonHoverBackground: #000;
-$buttonHoverBorderSize: fnGetSpacing(5);
+$buttonHoverBorderSize: 1px;
 $buttonHoverBorderStyle: solid;
 $buttonHoverBorderColor: #111;
 
@@ -91,7 +91,7 @@ $buttonActiveBackground: #555;
 // tables
 $tableBorderColor: #eee;
 $tableBorderStyle: solid;
-$tableBorderSize: fnGetSpacing(5);
+$tableBorderSize: 1px;
 
 // animation speed
 $animationDuration: 500ms; // animation speed | when page loads animations
