@@ -1,4 +1,4 @@
-Lumber
+Lumbr
 =============
 
 Lumber is a front-end framework.
