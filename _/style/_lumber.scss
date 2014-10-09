@@ -1,0 +1,506 @@
+/*! lumber.scss by Fredric Castelius */
+
+// Typographic settings
+@if $headings-hierarchy == true {
+	// default heading
+}
+
+@if $headings-in-two-sizes == true {
+	h1, h2, h3 {
+		font-size: fnGetSpacing(200);
+	}
+	h3, h4, h5, h6 {
+		font-size: fnGetSpacing(100);
+	}
+}
+
+@if $headings-same-size == true {
+	h1, h2, h3, h3, h4, h5, h6 {
+		font-size: fnGetSpacing(100);
+	}
+}
+
+// Body
+body { // !main content
+	max-width: $layoutMaxPoint;
+	margin: 0 2.5% 0 2.5%;
+	@media (min-width: $layoutMaxPoint - 20px) {
+		@include center-block;
+		width: 95%;
+		max-width: $layoutMaxPoint;
+	}
+}
+
+// Responsive breakpoint
+html {
+	/* !responsive */
+ 	@media (max-width: $phoneWidth) {
+ 		font-size: $phoneFontBaseSize;
+ 	}
+
+ 	@media (min-width: $tabletWidth) {
+ 		font-size: $tabletFontBaseSize;
+ 	}
+
+ 	@media (min-width: $laptopWidth) {
+ 		font-size: $laptopFontBaseSize;
+ 	}
+
+ 	@media (min-width: $desktopWidth) {
+ 		font-size: $desktopLayoutBase;
+ 	}
+}
+
+html {
+	
+	body {
+
+	 	/* !font */
+		font-family: $baseFont;
+		letter-spacing: $baseFontSpacing;
+		font-weight: $baseFontWeight;
+		color: $baseFontColor;
+		
+		h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a, h6, h6 a, .drop-cap:first-letter {
+			/* !headings */
+			font-family: $headingsFont;
+			letter-spacing: $headingsFontSpacing;
+			font-weight: $headingsFontWeight; // away with the auto headings boldness 
+			color: $headingsFontColor; // make the headings the same color as the regular text
+		}
+
+		/* !links */
+		a {
+			padding-bottom: $linkHoverBorderPosition;
+			color: $linkColor;
+			border-bottom: $linkHoverBorderSize $linkHoverBorderStyle $linkBorderColor;
+
+			transition: all $hoverTransitionSpeed ease;
+			
+			&:hover {
+				border-bottom: $linkHoverBorderSize $linkHoverBorderStyle $linkHoverBorderColor;
+				color: $linkHoverColor; 
+			}
+			
+			&:active {
+				color: $linkActiveColor; 
+			}
+
+			&:link {
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0.1)!important; // iOS tap color
+			}
+		}
+
+		/* !select !textarea !input !button */
+		select, textarea, input, button {
+			color: $baseFontColor;
+			transition: $hoverTransitionSpeed;
+    		-webkit-appearance: none; // restoring default styles in iOS devices
+		}
+
+		input {
+			width: 97%;
+			padding: fnGetSpacing(38) 1.5% fnGetSpacing(44) 1.5%;
+			
+			font-family: $baseFont;
+			color: $baseFontColor;
+			font-weight: $baseFontWeight;
+			
+			/*@media (max-width: $phoneWidth) {
+				width: 94%;
+				padding: fnGetSpacing(38) 3% fnGetSpacing(44) 3%;
+			}*/
+
+			border: $inputBorderSize $inputBorderStyle $inputBorderColor;
+			border-radius: $inputBorderRadius;
+			-webkit-border-radius: $inputBorderRadius;
+
+			&:focus {
+				border-color: $inputFocusBorderColor;
+				outline: 0;
+			}
+
+			transition: $hoverTransitionSpeed;
+		}
+
+		input[type="password"] { // input password
+			-webkit-text-security: disc;
+			padding-top: fnGetSpacing(41);
+			padding-bottom: fnGetSpacing(39);
+		}
+
+		// !button
+		button {
+			padding: fnGetSpacing(43) fnGetSpacing(120) fnGetSpacing(49) fnGetSpacing(120);
+			margin: fnGetSpacing(100) 0 fnGetSpacing(100) 0;
+
+			font-family: $baseFont;
+			background: $buttonBackground;
+			color: $baseFontColor;
+			font-weight: $font-weight;
+
+			
+			border: $buttonBorderSize $buttonBorderStyle $buttonBorderColor;
+			border-radius: $buttonBorderRadius;
+			-webkit-border-radius: $buttonBorderRadius;
+
+			border-radius: $buttonBorderRadius;
+			display: inline-block;
+			text-align: center;
+			vertical-align: middle;
+			cursor: pointer;
+			white-space: nowrap;
+
+			// !button hover
+			&:hover {
+				color: $buttonHoverColor;
+				background: $buttonHoverBackground;
+				border: $buttonHoverBorderSize $buttonHoverBorderStyle $buttonHoverBorderColor;
+			}
+
+			// !button active
+			&:active {
+				background: $buttonActiveBackground;
+			}
+
+			transition: $hoverTransitionSpeed;
+		}
+
+		// !label
+		label {
+			margin: fnGetSpacing(50) 0 fnGetSpacing(50) 0;
+			display: block;
+		}
+
+	}
+}
+
+// ?selection
+$selectionBackground: rgba(0, 0, 0, 0.8); // Background color when text selected | Example code: rgba(0, 0, 0, 0.4)
+$selectionText: rgba(255, 255, 255, 1); // Font color when text selected | Example code: rgba(255, 255, 255, 1)
+$selectionTextShadow: none; // Text shadow when text selected | Example code: 1px 1px 1px #000
+
+// !selection
+::selection {
+	background: $selectionBackground;
+	color: $selectionText;
+	text-shadow: $selectionTextShadow;
+}
+
+::-webkit-selection {
+	background: $selectionBackground;
+	color: $selectionText;
+	text-shadow: $selectionTextShadow;
+}
+
+::-moz-selection {
+	background: $selectionBackground;
+	color: $selectionText;
+	text-shadow: $selectionTextShadow;
+}
+
+// article
+article {
+	ul, ol {
+		margin-bottom: fnGetSpacing(100); // adding elastic bottom margin  
+	}
+	ul {
+		//margin-left: fnGetSpacing(80); // make unsorted lists align vertically in articles
+		list-style: none;
+		
+	}
+	ol {
+		margin-left: fnGetSpacing(90); // make sorted lists align vertically in articles
+	}
+}
+
+/* ?content
+   ========================================================================== */
+
+@mixin content() {
+	/*p {
+		margin-bottom: fnGetSpacing(200);
+		& + p {
+			text-indent: fnGetSpacing(0); // remove default text indention when new paragraph | overrides setting in TypePlate
+		}
+	}*/
+
+	h1, h2, h3 {
+		font-weight: $headingsFontWeight;
+		margin-left: fnGetSpacing(-1); // vertical alignment
+	}
+
+	h4, h5, h6 {
+		font-weight: $headingsFontWeight;
+	}
+
+	/*h1 {
+		margin-bottom: fnGetSpacing(36);
+		line-height: fnGetSpacing(74);
+		letter-spacing: fnGetSpacing(-3);
+	}
+
+	h2 {
+		margin-bottom: fnGetSpacing(34);
+		line-height: fnGetSpacing(80);
+	}
+
+	h3 {
+		margin-bottom: fnGetSpacing(46);
+		line-height: fnGetSpacing(90);
+	}
+
+	h4 {
+		margin-bottom: fnGetSpacing(70);
+		line-height: fnGetSpacing(94);
+	}
+
+	h5 {
+		margin-bottom: fnGetSpacing(90);
+		line-height: fnGetSpacing(96);
+	}
+
+	h6 {
+		margin-bottom: fnGetSpacing(108);
+		line-height: fnGetSpacing(96);
+	}*/
+
+	.indent {
+		margin-left: fnGetSpacing(100);
+	}
+
+	address {
+		margin-top: fnGetSpacing(-100);
+		margin-bottom: fnGetSpacing(100);
+	}
+
+	blockquote {
+		padding-bottom: fnGetSpacing(100);
+		&:before {
+			content: "“";
+		}
+		&:after {
+			content: "”";
+		}
+	}
+
+	p + blockquote {
+		margin-top: fnGetSpacing(-100);	
+	}
+
+	ul {
+		list-style: none;
+			li {
+			&:before {
+		    content: "•";
+		    color: $baseFontColor;
+			margin-right: fnGetSpacing(50); 
+		    }
+	    } 
+	}
+
+	// !table
+	table {
+		margin-top: fnGetSpacing(100); 
+		margin-bottom: fnGetSpacing(100); 
+		width: 100%;
+		text-align: left;
+		thead {
+				padding: fnGetSpacing(40);
+			tr {
+				background: none!important;
+			}
+		}
+		tr {
+			background: none;
+			border-top: $tableBorderSize $tableBorderStyle $tableBorderColor;
+			border-right: $tableBorderSize $tableBorderStyle $tableBorderColor;
+			border-bottom: $tableBorderSize $tableBorderStyle $tableBorderColor;
+			
+			&:nth-child(odd) {
+				background: none;
+			}
+
+			td, th {
+				border-left: $tableBorderSize $tableBorderStyle $tableBorderColor;	
+				width: 33%;
+				padding: fnGetSpacing(40);		
+			}
+
+			&:hover {
+				background: #e3e3e3;
+				transition: $hoverTransitionSpeed;
+				
+				td {
+					border-color: #e3e3e3;
+				}
+			}
+
+			transition: $hoverTransitionSpeed;
+		}
+	}
+
+	// !images
+	img, .size-full, .size-large {
+		margin: fnGetSpacing(50) 0 fnGetSpacing(50) 0;
+		width: 100%;
+	}
+
+	.size-medium {
+		width: 50% - 5.33;
+		margin-left: 5.33% * 0.5;
+		margin-right: 5.33% * 0.5;
+		&.alignright {
+			margin-right: 0;
+		}
+		&.alignleft {
+			margin-left: 0;
+		}
+	}
+
+	.size-thumbnail {
+		width: 28%;
+		margin-left: 5.33% * 0.5;
+		margin-right: 5.33% * 0.5;
+		@include breakpoint(phone) {
+			width: 50% - 5.33!important;
+			margin-left: 5.33% * 0.5;
+			margin-right: 5.33% * 0.5;
+		}
+		&.alignright {
+			margin-right: 0;
+		}
+		&.alignleft {
+			margin-left: 0;
+		}
+	}
+
+	// images alignment
+
+	.alignnone {
+		clear: both;
+	}
+
+	.alignleft {
+		float: left;
+	}
+
+	.alignright {
+		float: right;
+	}
+
+	.aligncenter {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	// WordPress caption
+
+	.wp-caption {
+		width: 100%!important;
+		margin-bottom: fnGetSpacing(50);
+		img {
+			margin-bottom: fnGetSpacing(25);
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+		.wp-caption-text {
+			font-size: 80%;
+			text-align: center;
+			font-style: italic;
+		}
+	}
+
+	// Gallery 
+
+	/*.gallery {
+		.gallery-columns-3 {
+			.gallery-item {
+				float: left;
+				width: 28%!important;
+				margin-left: 5.33% * 0.5!important;
+				margin-right: 5.33% * 0.5!important;
+			}
+		}
+	}*/
+
+	p + img {
+		margin-top: fnGetSpacing(-50)!important;
+	}
+
+	p + .wp-caption img {
+		margin-top: fnGetSpacing(-50)!important;
+	}
+
+	//!iframes
+	.fluid-width-video-wrapper {
+		margin-top: fnGetSpacing(100);
+		padding-top: 62.45%!important;
+		background: #fff!important;
+		overflow: hidden;
+		width: 99.9%!important;
+		position: relative;
+		padding: 0;
+		iframe {
+			left: -0.25%;
+			/* right: 1%; */
+			width: 100.5%;
+		}
+	}
+
+	mark {
+		background: rgba(0, 0, 0, 0.09); // mark a text
+	}
+
+	code,
+	kbd,
+	pre,
+	samp { //?!code example
+	}
+
+	pre {
+		padding: 0 fnGetSpacing(150);
+		background: rgba(0, 0, 0, 0.8);
+		margin: 0 0 fnGetSpacing(100) 0;
+		code {
+			color: #fff;
+			.comment {
+				opacity: 0.2;
+			}
+		}
+	}
+}
+
+/* !reset
+   ========================================================================== */
+
+@mixin reset() {
+	h1, h1#title, h2, h3, h4, h5, h6, p, pre, code, table, tr, td, th, img, blockquote, address, ul, ol, li, label, button, input, input[type="password"] {
+		font-size: 100%;
+		line-height: fnGetSpacing(100);
+		margin: 0;
+		padding: 0;	
+		letter-spacing: 0;
+		border-radius: 0;
+		text-align: left;
+	}
+
+	p {
+		& + p {
+			margin-top: fnGetSpacing(0);
+			text-indent: fnGetSpacing(0); // remove default text indention when new paragraph | overrides setting in TypePlate
+		}
+	}
+
+	ol {
+		margin-left: fnGetSpacing(90);
+	}
+}
+
+/* !reset
+   ========================================================================== */
+
+article {
+	@include content();
+}

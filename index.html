@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" dir="ltr" land="sv-SE"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" dir="ltr" land="sv-SE"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" dir="ltr" land="sv-SE"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" dir="ltr" land="sv-SE"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" dir="ltr" lang="en"><!--<![endif]-->
+
+<head>
+
+    <title>Lumbr</title>
+
+
+    <link href="//www.google-analytics.com" rel="dns-prefetch">
+
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name="viewport" content="width=device-width">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900' rel='stylesheet' type='text/css'>
+
+    <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
+    <link rel="stylesheet" href="style.css">
+    <script src="_/js/modernizr.js"></script> 
+
+</head>
+
+<body>
+
+    <div id="bg"></div>
+    <div id="bg-overlayer"></div>
+
+    <header role="banner">
+
+        <div id="logo">
+            Lumbr
+        </div>
+
+        <nav role="navigation">
+            <ul>
+                <li><a href="" title="">Creator</a></li>
+                <li><a href="test.html" title="">How it looks</a></li>
+                <li><a href="" title="">Github</a></li>
+                <li><a href="" title="">Documentation</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section id="hero">
+        <div>
+            <h1 id="title">Lumbr</h1>
+            <h2 id="sub-title">An elastic front-end framework for well executed modern web development.</h2>
+            <!--<h4>Aka a Bootstrap alternative that focuses on the future</h4>-->
+            <button>Download 0.4</button>
+        </div>
+    </section>
+        
+    <main>
+
+        <article id="content">
+            <h6>Bootstrap is fun and all but it dosen't cover these Lumbr features:</h6>
+            <ul>
+                <li>Super free to do anything mode</li>
+                <li>Elastic positioning</li>
+                <li>Great typography</li>
+                <li>Animation effects</li>
+                <li>Semantics</li>
+                <li>Awesomly nice print css</li>
+                <li>Vertical alingment</li>
+                <li>Easy customisable grids</li>
+                <li>Adaptive images</li>
+                <li>Clean code and organized</li>
+                <li>Super low code to text ratio</li>
+                <li>Smart snippets</li>
+                <li>Minimum requests = more speed</li>
+            </ul>
+
+            <h3>Documentation</h3>
+
+            <section id="files">
+
+<pre>
+<code>
+_
+    content
+        <span class="comment">Your content files here</span>
+    script
+        _jquery-1.11.0.min.js
+        _jquery.fitvids.js
+        modernizr.js
+        scripts.js <span class="comment">Exports to root > scripts.min.js</span>
+    style
+        _animations.scss
+        _functions.scss
+        _grid.scss
+        _layout.scss
+        _lumbr.scss
+        _print.scss
+        _reset.scss
+        _settings.scss
+        _typeplate.scss
+        style.scss <span class="comment">Exports to root > style.css</span>
+index.html
+style.css
+scripts.min.js
+
+</code>
+</pre> 
+
+                <div>
+                    <h4>Files</h4>
+                    <p>This is the including package. To keep things simple we export and minify all style and script files and put them in the root. Making the page load faster with fewer page requests.</p>
+                    <p>The two important files to keep in mind is settings.scss and layout.scss</p>
+                    <h6>Settings</h6>
+                    <p>In the _settings.scss file you define your project with all its basic yet very useful settings like typography heriarki, colors on all links, hover animation speed just to name a few.</p>
+                    <h6>Layout</h6>
+                    <p>In the _layout.scss file is were you will put in your own layout starting fresch with just your code. Lumbr is just there in the background.<p>
+                </div>
+
+            </section>
+
+
+<h3>Settings</h3>
+
+<p id="truncate">When fireing up a new project the first thing you should do is to get in to the _settings.scss. Here is all the main settings for the project. Later you will add your own layout in _layout.scss but first, lets take a look at the settings file:</p>
+
+<section id="breakpoints">
+
+<pre>  
+<code>
+<span class="comment">// desktops</span>
+$desktopWidth: 1200px; <span class="comment">// when desktops starts</span>
+$desktopLayoutBase: 120%; <span class="comment">// general font size and layout spacing</span>
+
+<span class="comment">// laptops</span>
+$laptopWidth: 960px; <span class="comment">// when laptops starts</span>
+$laptopFontBaseSize: 130%; <span class="comment">// general font size and layout spacing</span>
+
+<span class="comment">// tablets</span>
+$tabletWidth: 768px ; <span class="comment">// when tablet starts</span>
+$tabletFontBaseSize: 120%; <span class="comment">// general font size and layout spacing</span>
+
+<span class="comment">// phones</span>
+$phoneFontBaseSize: 120%; <span class="comment">// general font size and layout spacing</span>
+
+<span class="comment">// layout max point</span>
+$layoutMaxPoint: 1100px;  
+</code>
+</pre>
+
+    <div>
+        <h4>Define breakpoints</h4>
+        <p>The $desktopWidth, $laptopWidth and the $tabletWidth define your projects breakpoints. We know that devices and breakpoints differ from different projects so we made it easy for you to change. </p>
+        <p>The BaseSize is a very interesting number. Let's say it's our magical number. It represents which base the elastic layout should calculate it's layout from. This is achived by using Rems in the styling.</p>
+        <p>This really comes in handy when you want bigger text and consistent layout on different devices.</p>
+    </div>
+
+</section>
+
+<section id="typography">
+
+<pre>
+<code>
+<span class="comment">// base type</span>
+$font-weight: 300;
+$line-height: 1.65;
+$font-size: 80; <span class="comment">// percentage value (16 * 112.5% = 18px)</span>
+$font-base: 16 * ($font-size/100); <span class="comment">// converts our percentage to a pixel value</span>
+
+<span class="comment">// paragraphs</span>
+$paragraph-vertical-whitespace: true; <span class="comment">// vertical space after paragragh</span>
+$paragraph-spacing: fnGetSpacing(100); <span class="comment">// paragraph spacing and indent value</span>
+
+<span class="comment">// heading system</span>
+$headings-hierarchy: true;
+$headings-in-two-sizes: false; 
+$headings-same-size: false;
+
+<span class="comment">// icon font</span>
+$icon-fonts: null; // ex.1) $icon-fonts: (icon-name); ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+
+<span class="comment">// font</span>
+$headingsFont: 'Raleway'; <span class="comment">// Headings font | same as base font as default</span>
+$baseFont: sans-serif; <span class="comment">// base font </span>
+$headingsFontSpacing: fnGetSpacing(-2); <span class="comment">// headings font spacing | same as base font as default</span>
+$baseFontSpacing: fnGetSpacing(0); <span class="comment">// base font letter spacing</span>
+$headingsFontWeight: bold; <span class="comment">// headings font weight | same as base font as default</span>
+$baseFontWeight: 300; <span class="comment">// base font weight</span>
+$baseFontColor: #000; <span class="comment">// all regular text color</span>
+$headingsFontColor: $baseFontColor; <span class="comment">// headings font weight | same as base font as default</span>
+</code>
+</pre>
+
+    <div>
+        <h4>Typography</h4>
+
+        <p>Lumbr is based on beautiful typography were you are totaly in charge of the outcome tough the standard settings are kinda neat.</p>
+
+        <p>Lumbr is based on beautiful typography were you are totaly in charge of the outcome tough the standard settings are kinda neat.</p>
+
+        <p>Lumbr is based on beautiful typography were you are totaly in charge of the outcome tough the standard settings are kinda neat.</p>
+
+        <h4>Fonts</h4>
+
+        <p>Lumbr is based on beautiful typography were you are totaly in charge of the outcome tough the standard settings are kinda neat.</p>
+
+        <p>Lumbr is based on beautiful typography were you are totaly in charge of the outcome tough the standard settings are kinda neat.</p>
+
+        <p>Lumbr is based on beautiful typography were you are totaly in charge of the outcome tough the standard settings are kinda neat.</p>
+    </div>
+
+</section>
+
+<section id="links">
+
+<pre>
+<code>
+<span class="comment">// links </span>
+$linkColor: $baseFontColor; <span class="comment">// all regular links color | default: $baseFontColor</span>
+$linkBorderColor: rgba(0, 0, 0, 0.05); <span class="comment">// link border color | default: rgba(0, 0, 0, 0.05) | suggestion: $baseFontColor, $bodyBackground</span>
+
+<span class="comment">// links when hover</span>
+$linkHoverColor: $baseFontColor; <span class="comment">// link text color when hover | default: $baseFontColor</span>
+$linkHoverBorderPosition: fnGetSpacing(12); <span class="comment">// position of the border | default: fnGetSpacing(10)</span>
+$linkHoverBorderSize: fnGetSpacing(5); <span class="comment">// size of border | suggestion value: dashed</span>
+$linkHoverBorderColor: $baseFontColor; <span class="comment">// border color | default: $baseFontColor</span>
+$linkHoverBorderStyle: solid; <span class="comment">// border style</span>
+
+<span class="comment">// links when active</span>
+$linkActiveColor: $baseFontColor; <span class="comment">// color when clicking on link | default: $baseFontColor </span>
+</code>
+</pre>
+
+    <div>
+        <h4>Links</h4>
+
+        <p>Lumbr is based on beautiful typography were you are totaly in charge of the outcome tough the standard settings are kinda neat.</p>
+    </div>
+
+</section>
+
+<section id="input">
+<pre>
+<code>
+<span class="comment">// input</span>
+$inputBorderSize: fnGetSpacing(5); <span class="comment">// size of border | suggestion value: dashed</span>
+$inputBorderColor: #ccc; <span class="comment">// border color | default: #ccc</span>
+$inputBorderStyle: solid; <span class="comment">// border style</span>
+$inputBorderRadius: 2px; <span class="comment">// border radius</span>
+$inputFocusBorderColor: #333; <span class="comment">// border when focusing on input field | default: $inputBorderColor</span>
+</code>
+</pre>
+
+<div>
+    <h4>Input</h4>
+
+    <p>Lumbr is based on beautiful typography were you are totaly in charge of the outcome tough the standard settings are kinda neat.</p>
+</div>
+
+</section>
+
+<section id="buttons">
+<pre>
+<code>
+<span class="comment">// button</span> 
+$buttonBorderSize: fnGetSpacing(5); <span class="comment">// size of border | suggestion value: dashed</span>
+$buttonBackground: transparent;
+$buttonBorderColor: #999; <span class="comment">// border color | default: #ccc</span>
+$buttonBorderStyle: solid; <span class="comment">// border style</span>
+$buttonBorderRadius: 4px; <span class="comment">// border radius</span>
+$buttonFocusBorderColor: $buttonBorderColor; <span class="comment">// border when focusing on input field | default: $inputBorderColor</span>
+
+<span class="comment">// button when hover</span>
+$buttonHoverColor: #fff;
+$buttonHoverBackground: #000;
+$buttonHoverBorderSize: fnGetSpacing(5);
+$buttonHoverBorderStyle: solid;
+$buttonHoverBorderColor: #111;
+
+<span class="comment">// button when active</span>
+$buttonActiveBackground: #555;
+</code>
+</pre>
+
+<div>
+    <h4>Buttons</h4>
+
+    <p>Lumbr is based on beautiful typography were you are totaly in charge of the outcome tough the standard settings are kinda neat.</p>
+</div>
+
+</section>
+
+
+<section id="tables">
+<pre>
+<code>
+<span class="comment">// tables</span>
+$tableBorderColor: #eee;
+$tableBorderStyle: solid;
+$tableBorderSize: fnGetSpacing(5);
+</code>
+</pre>
+
+<div>
+    <h4>Tables</h4>
+
+    <p>Settings for tables</p>
+</div>
+
+</section>
+
+<section id="animation-speed">
+<pre>
+<code>
+<span class="comment">// animation speed</span>
+$animationDuration: 500ms; <span class="comment">// animation speed | when page loads animations</span>
+
+<span class="comment">// hover speed</span>
+$hoverTransitionSpeed: 500ms; <span class="comment">// transistion speed | when hover over something animations</span>
+</code>
+</pre>
+
+<div>
+    <h4>Animation speed</h4>
+
+    <p>Settings for animation speed</p>
+</div>
+
+</section>
+
+<section id="layout">
+<h3>Layout</h3>
+
+<p>When your settings file is set up after you projects preferences lets head over to layout.scss. As you see its a empty canvas for you to add your awesomly creafted style. For rapid up your styling processes we have created and tweakded some of the newest and coolest featuers for you to use easily.</p>
+
+<section id="elastic-spacing">
+<h4>Elastic spacing</h4>
+<p>For creating that elastic effect we need elastic spacing and that we have made a function for. It's called fnGetSpacing().The value you put in, in the function is then based on the magicnumber from the settings file!</p>
+<pre>
+<code>
+div {
+    padding: fnGetSpacing(100); <span class="comment">// elastic spacing</span>
+} 
+</code>
+</pre>
+
+<section id="grids">
+<h4>Grids</h4>
+<p>We all need those grids. Havn't that been alittle standardized latley? lets shake this up with the property flexbox and mixins.</p>
+<pre>
+<code>
+#wrapper {
+    @include wrapper();
+    aside {
+        width: 200px; <span class="comment">// elastic spacing</span>
+        margin: 0 fnGetSpacing(100) 0 0; <span class="comment">// elastic spacing</span>
+    }
+    article {
+        flex: 1;
+    } 
+}
+</code>
+</pre>
+</section>
+
+<section class="example" id="example-grid-1">
+    <aside>Sidebar with 200px width and elastic margin to right</aside>
+    <article>Just calculate the size for me!</article>
+</section>
+
+    <section id="vertical-alignment">
+        <h4>Vertical alignment</h4>
+            <p>We all need those grids. Havn't that been alittle standardized latley? lets shake this up with the property flexbox and mixins.</p>
+<pre>
+<code>
+#wrapper {
+    @include wrapper();
+    @include middle();
+    aside {
+        width: 200px; <span class="comment">// elastic spacing</span>
+        margin: 0 fnGetSpacing(100) 0 0; <span class="comment">// elastic spacing</span>
+    }
+    article {
+        flex: 1;
+    } 
+}
+</code>
+</pre>
+    </section>
+    <section class="example" id="example-grid-2">
+        <aside>Sidebar with 200px width and elastic margin to right plus some padding</aside>
+        <article>Just calculate the size and middle me for me plz.</article>
+    </section>
+
+</section>
+
+<section id="traiggerviewports">
+<h4>Trigger viewports</h4>
+<p>It should be easy to trigger a viewport, with Lumbr it's as easy as baking a pie, well no, simplier. Here's the snippets</p>
+<pre>
+<code>
+<span class="comment">standard ones</span>
+@include breakpoint(desktop){} <span class="comment">Trigger the dekstop which is the highest viewport</span>
+@include breakpoint(laptop){} <span class="comment">Triggers the laptop only</span>
+@include breakpoint(tablet){} <span class="comment">Triggers the tablet only</span>
+@include breakpoint(phone){} <span class="comment">Triggers the phone only</span>
+
+<span class="comment">// special ones</span>
+@include breakpoint(laptopUp){} <span class="comment">Triggers the laptop and up</span>
+@include breakpoint(laptopDown){} <span class="comment">Triggers the laptop and down</span>
+@include breakpoint(tabletUp){} <span class="comment">Triggers tablet and up</span>
+@include breakpoint(tabletDekstop){} <span class="comment">Covers tablet to dekstop</span>
+
+</code>
+</pre>
+</section>
+
+<p>Retina images, Additional, Additional snippets, @include text-truncate();, animations, print.css</p>
+
+<p>IE10+, Firefox 30+, Chrome +27, Safari 5.1+, Opera 23+, iOS +7.1, 2.3+</p>
+        </article>
+
+    </main>
+
+    <footer role="contentinfo">
+        
+    </footer>
+
+<script src="scripts.min.js"></script>      
+
+</body>
+
+</html>

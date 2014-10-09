@@ -1,0 +1,28 @@
+/*! style.css */
+
+/* Functions */ 
+@import '_functions.scss';
+
+/* Settings for layout  */ 
+@import '_settings.scss';
+
+/*! Resets */ 
+@import '_reset.scss';
+
+/* Typeplate v1.1.4 | by Zachary Kain & Dennis Gaebel |  */ 
+@import '_typeplate.scss';
+
+/* The lumber by Fredric Castelius */
+@import '_lumber.scss';
+
+/* Flex Grid */
+@import '_grid.scss';
+
+/* Animations by daneden.me tweaked by West */
+@import '_animations.scss'; 
+
+/* Layout */
+@import '_layout.scss';
+
+/* Print style by West */
+@import '_print.scss'; 
