@@ -82,8 +82,8 @@ $table-border-style: $input-border-style;
 $hover-transition-speed: 500ms; // transistion speed | when hover over something animations
 
 // selection
-$selection-background: $color-main; // Background color when text selected | Example code: rgba(0, 0, 0, 0.4)
-$selection-text: $color-secondary; // Font color when text selected | Example code: rgba(255, 255, 255, 1)
+$selection-background: $color-secondary; // Background color when text selected | Example code: rgba(0, 0, 0, 0.4)
+$selection-text: $color-main; // Font color when text selected | Example code: rgba(255, 255, 255, 1)
 $selection-text-shadow: none; // Text shadow when text selected | Example code: 1px 1px 1px #000
 
 // mark

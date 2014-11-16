@@ -1,0 +1,109 @@
+
+/* ==========================================================================
+   The Default Config - Don't change anything in here. Go to _config.scss
+   ========================================================================== */
+
+// main
+$color-main: #000 !default;
+$color-secondary: #e3e3e3 !default;
+$border-size: 0.25rem !default;
+$border-radius: 0rem !default;
+
+// breakpoints
+$desktop-width: 1200px !default; // when desktops starts
+$laptop-width: 960px !default; // when laptops starts
+$tablet-width: 768px !default; // when tablet starts
+
+// Typography - Scale factor - Don't change them ever. You will take searious damage.
+$MINOR_SECOND: 1.067 !default;
+$MAJOR_SECOND: 1.125 !default;
+$MINOR_THIRD: 1.2 !default;
+$MAJOR_THIRD: 1.25 !default;
+$PERFECT_FOURTH: 1.333 !default;
+$AUGMENTED_FOURTH: 1.414 !default;
+$PERFECT_FIFTH: 1.5 !default;
+$MINOR_SIXTH: 1.6 !default;
+$GOLDEN_SECTION: 1.618 !default;
+$MAJOR_SIXTH: 1.667 !default;
+$MINOR_SEVENTH: 1.778 !default;
+$MAJOR_SEVENTH: 1.875 !default;
+$OCTAVE: 2 !default;
+$MAJOR_TENTH: 2.5 !default;
+$MAJOR_ELEVENTH: 2.667 !default;
+$MAJOR_TWELFTH: 3 !default;
+$DOUBLE_OCTAVE: 4 !default;
+$SGL_DEFAULT_FONT_SIZE: 16 !default;
+$sgl-base-line-height: 1.8 !default;
+$sgl-scale-factor: $PERFECT_FOURTH !default;
+
+// base fonts
+$font-base: sans-serif !default; // base font | Check in http://femmebot.github.io/google-type/ for inspiration
+$font-base-letter-spacing: 0 !default; // base font letter spacing 
+$font-base-weight: 300 !default; // base font weight
+$font-base-color: $color-main !default; // all regular text color 
+
+// headings
+$font-headings: $font-base !default; // Headings font | same as base font as default
+$font-headings-letter-spacing: -0.01rem !default; // h1 & h2 letter spacing
+$font-headings-weight: 300 !default; // headings font weight
+$font-headings-color: $font-base-color !default; // headings font weight | default: $font-base-color
+
+// links
+$link-color: $font-base-color !default; // all regular links color | default: $font-base-color
+$link-weight: 300 !default; // base font weight
+$link-border-color: $color-secondary !default; // link border color | default: rgba(0, 0, 0, 0.05) | suggestion: $font-base-color, $bodyBackground
+$link-border-style: solid !default; // border style
+$link-background: none !default;
+
+// links when hover
+$link-hover-color: $font-base-color !default; // link text color when hover | default: $font-base-color
+$link-hover-border-position: 0rem !default; // position of the border | default: 0.20rem
+$link-hover-border-size: 1px !default; // size of border
+$link-hover-border-color: $color-main !default;
+$link-hover-background: none !default;
+
+// links when active
+$link-active-color: $font-base-color !default; // color when clicking on link | default: $font-base-color 
+
+// input 
+$input-border-size: $border-size !default; // size of border | suggestion value: dashed
+$input-border-color: $color-secondary !default; // border color | default: #ccc
+$input-border-style: solid !default; // border style
+$input-border-radius: $border-radius !default; // border radius
+$input-border-focus-color: $color-main !default; // border when focusing on input field | default: $input-border-color
+
+// button 
+$button-border-size: $border-size !default; // size of border | suggestion value: dashed
+$button-background: $color-secondary !default;
+$button-border-color: $color-secondary !default; // border color | default: #ccc
+$button-border-style: solid !default; // border style
+$button-border-radius: $border-radius !default; // border radius
+$button-focus-border-color: $button-border-color !default; // border when focusing on input field | default: $input-border-color
+
+// button when hover
+$button-hover-color: $color-secondary !default;
+$button-hover-background: $color-main !default;
+$button-hover-border-color: $color-main !default;
+
+// button when active
+$button-active-background: none !default;
+
+// tables
+$table-border-size: $border-size / 2 !default;
+$table-border-color: $input-border-color !default;
+$table-border-style: $input-border-style !default;
+
+// hover speed
+$hover-transition-speed: 500ms !default; // transistion speed | when hover over something animations
+
+// selection
+$selection-background: $color-main !default; // Background color when text selected | Example code: rgba(0, 0, 0, 0.4)
+$selection-text: $color-secondary !default; // Font color when text selected | Example code: rgba(255, 255, 255, 1)
+$selection-text-shadow: none !default; // Text shadow when text selected | Example code: 1px 1px 1px #000
+
+// mark
+$mark-background: $color-secondary !default;
+
+// embedd code
+$embedd-code-background: $color-main !default;
+$embedd-code-color: $color-secondary !default;

@@ -1,6 +1,8 @@
-	    <!--<footer role="contentinfo">
-	        
-	    </footer> -->
+	    <footer role="contentinfo">
+			<p>Created and maintained by Fredric Castelius. Contribute to this project and be added to the contributor list.</p>
+	    </footer>
+
+	</div>
 
 	<script src="script.min.js"></script>
 	

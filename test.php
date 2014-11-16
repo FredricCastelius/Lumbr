@@ -4,48 +4,12 @@
 
         <article id="content" role="main">
 
-            <label for="first_name">First Name</label>
-            <input type="text" id="first_name" name="first_name" placeholder="Jonathan">
-            <label for="last_name">Last Name</label>
-            <input type="text" id="last_name" name="last_name" placeholder="Doe">
-            <label for="email">Email Address</label>
-            <input type="text" id="email" name="email" placeholder="jon@doe.com">
-            <label for="bio">Biography</label>
-            <textarea id="bio" name="bio" placeholder="Textarea"></textarea>
-            <label for="phone">Phone Number</label>
-            <input type="text" id="phone" name="phone" placeholder="+351 999 999">
-            <label for="affiliations">Affiliations</label>
-            <textarea id="affiliations" name="affiliations" placeholder="Textarea"></textarea>
-            <!--<div class="dropdown">            
-                <button>Dropdown</button>
-                <nav>
-                    <ul role="menu">
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                    </ul>
-                </nav>
-            </div>-->
-            <input type="password" id="phone" name="phone" placeholder="Password here">
-            <input class="cbp-mc-submit" type="submit" value="Send your data" />
-
-            <h1>Heading h1</h1>
+            <h1>The test page</h1>
             
             <p><a href="">Far far away,</a> Far far away, behind the word mountains, there live the blind texts.  
             Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn't listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
 
             <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then</p>
-
-            <h2>Grids</h2>
-
-            <section id="grid-1">
-                <div>
-                    <div>Larger devices: 3/4<br>Smaler devices:  1/1</div>
-                </div>
-                <div>
-                    <div>Larger devices: 1/4<br>Smaler devices:  1/1</div>
-                </div>
-            </section>
 
             <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then</p>
 
@@ -95,21 +59,32 @@
 
             <h6>When she reached the first hills</h6>
 
-            <!--<form role="form">
 
-                <label for="exampleInputEmail1">Email address</label>
+            <!--<div class="dropdown">            
+                <button>Dropdown</button>
+                <nav>
+                    <ul role="menu">
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                    </ul>
+                </nav>
+            </div>-->
 
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-
-                <label for="exampleInputPassword1">Password</label>
-
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-
-                <textarea placeholder="Textarea"></textarea>
-
-                <button type="submit" class="btn btn-default">Submit</button>
-
-            </form>-->
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" placeholder="Jonathan">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Doe">
+            <label for="email">Email Address</label>
+            <input type="text" id="email" name="email" placeholder="jon@doe.com">
+            <label for="bio">Biography</label>
+            <textarea id="bio" name="bio" placeholder="Textarea"></textarea>
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" placeholder="+351 999 999">
+            <label for="affiliations">Affiliations</label>
+            <textarea id="affiliations" name="affiliations" placeholder="Textarea"></textarea>
+            <input type="password" id="phone" name="phone" placeholder="Password here">
+            <input class="cbp-mc-submit" type="submit" value="Send your data" />
 
             <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
 

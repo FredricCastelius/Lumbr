@@ -43,7 +43,9 @@
 </head>
 <body>
 
-        <!--<header role="banner">
+    <div id="wrapper">
+        
+        <header role="banner">
 
             <div id="logo">
                 <a href="index.php">Lumbr</a>
@@ -51,11 +53,9 @@
 
             <nav role="navigation">
                 <ul>
-                    <li><a href="http://fredriccastelius.github.io">Creator</a></li>
                     <li><a href="https://github.com/FredricCastelius/Lumbr">Github</a></li>
-                    <li><a href="">Documentation</a></li>
-                    <li><a href="demo.php" title="">Demo</a></li>
+                    <li><a href="test.php" title="">Test page</a></li>
                 </ul>
             </nav>
 
-        </header>-->
+        </header>

@@ -133,7 +133,7 @@ $phone-width: $tablet-width - 1px; // when phone ends
     align-items: flex-end;
   }
 
-  & > div, & > li, & > article, & > aside, & > main, & > form {
+  & > div, & > li, & > article, & > aside, & > main, & > form, & > header {
     
     flex: $grid;
 
@@ -234,19 +234,19 @@ $phone-width: $tablet-width - 1px; // when phone ends
 }
 
 // horisontal navigation
-@mixin nav($nav-float, $nav-direction, $nav-margin, $nav-padding, $nav-ackground){
+@mixin nav($nav-float, $nav-direction, $nav-margin, $nav-padding, $nav-background){
   text-align: center;
   float: $nav-float;
   ul {
     float: $nav-float;
-    background: $nav-ackground;
+    background: $nav-background;
     li {
       float: $nav-direction;
       margin: $nav-margin;
       padding: $nav-padding;
       display: inline-block;
       text-align: -webkit-match-parent;
-      @if $nav-ackground == none and $nav-direction == left {
+      @if $nav-background == none and $nav-direction == left {
         &:first-child {
           margin-left: 0;
           padding-left: 0;
@@ -256,7 +256,7 @@ $phone-width: $tablet-width - 1px; // when phone ends
           padding-right: 0;
         }
       }
-      @if $nav-ackground == none and $nav-direction == right {
+      @if $nav-background == none and $nav-direction == right {
         &:last-child {
           margin-left: 0;
           padding-left: 0;

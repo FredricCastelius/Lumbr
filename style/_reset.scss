@@ -20,6 +20,7 @@ html {
 	font-family: sans-serif; // remove all default font families
 	text-align: left; // default left alignment
 	-webkit-font-smoothing: antialiased; // Smoother font on webkit browsers
+	white-space: normal; 
 }
 
 *, *:after, *:before {

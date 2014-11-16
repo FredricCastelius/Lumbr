@@ -211,3 +211,8 @@ p, ul, ol, pre, table, blockquote {
 	@include sassy-gridlover-margins(true);
 }
 
+nav > ul, nav > ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
