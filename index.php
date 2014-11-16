@@ -53,7 +53,7 @@
 
 		<h2>Getting started with Lumbr</h2>
 
-		<p>Simplicity, flexability and rapidness is what Lumbr is all about. To get going with lumbr you need a SASS preprocessor with autoprefixor on. E.g. Codekit for Mac OS X.</p>
+		<p>Simplicity, flexibility and rapidness is what Lumbr is all about. To get going with lumbr you need a SASS preprocessor with autoprefixor on. E.g. Codekit for Mac OS X.</p>
 
 		<p>With that cover fire up the project and set the style.scss to compile to the root /style.min.css</p>
 

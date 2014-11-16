@@ -1,20 +1,13 @@
 Lumbr
 =============
 
-Lumber is a front-end framework.
-
-
-How to use
+Getting started with Lumbr
 -------
 
-Main layout settings: _settings.scss
+Simplicity, flexibility and rapidness is what Lumbr is all about. To get going with lumbr you need a SASS preprocessor with autoprefixor on. E.g. Codekit for Mac OS X.
 
-Your styling: _layout.scss
+With that cover fire up the project and set the style.scss to compile to the root /style.min.css
 
-Smooth scroll:
+There you go, set up your projects base settings in: _config.scss
 
-<a data-scroll data-options='{ "easing": "easeOutCubic" }' href="#wrapper">Scroll to top &#8593;</a>
-
-Icons: 
-
-Generate using this: http://realfavicongenerator.net/
+After that apply your own layout to: _layout.scss
