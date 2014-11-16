@@ -1,0 +1,121 @@
+
+/* ==========================================================================
+   The Animations - Let's make stuff fly fade-in all over the place
+   ========================================================================== */
+
+// fade in
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}	
+	100% {
+		opacity: 1;
+	}
+}
+
+// fade in and up
+@keyframes fadein-up {
+	0% {
+		opacity: 0;
+		transform: translateY(1rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+// fade in and down
+@keyframes fadein-down { 
+	0% {
+		opacity: 0;
+		transform: translateY(-1rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+// fade in from left
+@keyframes fadein-left { 
+	0% {
+		opacity: 0;
+		transform: translateX(-1rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+// fade in from right
+@keyframes fadein-right { 
+	0% {
+		opacity: 0;
+		transform: translateX(1rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+// fade out
+@keyframes fadeout { 
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+// fade out and up
+@keyframes fadeout-up { 
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(-1rem);
+	}
+}
+
+// fade out and down
+@keyframes fadeout-down { 
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(1rem);
+	}
+}
+
+// fade out and left
+@keyframes fadeout-left { 
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(-1rem);
+	}
+}
+
+// fade out and right
+@keyframes fadeout-right { 
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(1rem);
+	}
+}

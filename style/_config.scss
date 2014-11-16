@@ -1,0 +1,96 @@
+
+/* ==========================================================================
+   The Config - where we set the define the base for our layout
+   ========================================================================== */
+
+// typography
+$sgl-base-font-size: 16;
+$sgl-base-line-height: 1.8;
+$sgl-scale-factor: $PERFECT_FOURTH;
+
+// main
+$color-main: #000;
+$color-secondary: #e3e3e3;
+$border-size: 0.25rem;
+$border-radius: 0rem;
+
+// breakpoints
+$desktop-width: 1200px; // when desktops starts
+$laptop-width: 960px; // when laptops starts
+$tablet-width: 768px; // when tablet starts
+
+//@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,100italic,300italic|Exo+2:400,100,100italic|Roboto:400,300,100,100italic,300italic);
+
+// base fonts
+$font-base: 'Roboto', sans-serif; // base font | Check in http://femmebot.github.io/google-type/ for inspiration
+$font-base-letter-spacing: 0; // base font letter spacing 
+$font-base-weight: 300; // base font weight
+$font-base-color: $color-main; // all regular text color 
+
+// headings
+$font-headings: $font-base; // Headings font | same as base font as default
+$font-headings-letter-spacing: -0.01rem; // h1 & h2 letter spacing
+$font-headings-weight: 300; // headings font weight
+$font-headings-color: $font-base-color; // headings font weight | default: $font-base-color
+
+// links
+$link-color: $font-base-color; // all regular links color | default: $font-base-color
+$link-weight: 300; // base font weight
+$link-border-color: $color-secondary; // link border color | default: rgba(0, 0, 0, 0.05) | suggestion: $font-base-color, $bodyBackground
+$link-border-style: solid; // border style
+$link-background: none;
+
+// links when hover
+$link-hover-color: $font-base-color; // link text color when hover | default: $font-base-color
+$link-hover-border-position: 0rem; // position of the border | default: 0.20rem
+$link-hover-border-size: 1px; // size of border
+$link-hover-border-color: $color-main;
+$link-hover-background: none;
+
+// links when active
+$link-active-color: $font-base-color; // color when clicking on link | default: $font-base-color 
+
+// input 
+$input-border-size: $border-size; // size of border | suggestion value: dashed
+$input-border-color: $color-secondary; // border color | default: #ccc
+$input-border-style: solid; // border style
+$input-border-radius: $border-radius; // border radius
+$input-border-focus-color: $color-main; // border when focusing on input field | default: $input-border-color
+
+// button 
+$button-border-size: $border-size; // size of border | suggestion value: dashed
+$button-background: $color-secondary;
+$button-border-color: $color-secondary; // border color | default: #ccc
+$button-border-style: solid; // border style
+$button-border-radius: $border-radius; // border radius
+$button-focus-border-color: $button-border-color; // border when focusing on input field | default: $input-border-color
+
+// button when hover
+$button-hover-color: $color-secondary;
+$button-hover-background: $color-main;
+$button-hover-border-color: $color-main;
+
+// button when active
+$button-active-background: none;
+
+// tables
+$table-border-size: $border-size / 2;
+$table-border-color: $input-border-color;
+$table-border-style: $input-border-style;
+
+// hover speed
+$hover-transition-speed: 500ms; // transistion speed | when hover over something animations
+
+// selection
+$selection-background: $color-main; // Background color when text selected | Example code: rgba(0, 0, 0, 0.4)
+$selection-text: $color-secondary; // Font color when text selected | Example code: rgba(255, 255, 255, 1)
+$selection-text-shadow: none; // Text shadow when text selected | Example code: 1px 1px 1px #000
+
+// mark
+$mark-background: $color-secondary;
+
+// embedd code
+$embedd-code-background: $color-main;
+$embedd-code-color: $color-secondary;
+
+

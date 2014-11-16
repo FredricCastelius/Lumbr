@@ -1,0 +1,209 @@
+
+/* ==========================================================================
+   The Basics - where we reset all the messyness of the browsers defaults 
+   ========================================================================== */
+
+/* position & behavior resets
+   ========================================================================== */
+
+html {
+	font-size: 100%;
+  	text-size-adjust: 100%; // prevent iOS text size adjust after orientation change, without disabling user zoom.
+}
+
+* { // no stuff on everything
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 1rem; // making everything to 100% font size
+	vertical-align: baseline;
+	font-family: sans-serif; // remove all default font families
+	text-align: left; // default left alignment
+	-webkit-font-smoothing: antialiased; // Smoother font on webkit browsers
+}
+
+*, *:after, *:before {
+	box-sizing: border-box; // correct border wrapping
+}
+
+body {
+	overflow-y: scroll!important; // Force a vertical scrollbar to prevent a jumpy page
+	overflow-x: hidden; // hide horizontal scroll when wrapping acts weird in IE and FF
+}
+
+a {
+ 	background: transparent; // Remove the gray background color from active links in IE 10.
+	text-decoration: none; // no underline on links
+  	&:active, &:hover {
+  		outline: 0; // improve readability when focused and also mouse hovered in all browser
+  	}
+	&:link {
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0.1)!important; // iOS tap color
+	}
+}
+
+img, object, embed {
+	max-width: 100%;  // images should not override parents width
+	height: auto;
+	display: block;
+}
+
+select, textarea, input, {
+	-webkit-appearance: none; // restoring default styles in iOS devices
+}
+
+button,
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; // correct inability to style clickable `input` types in iOS.
+  cursor: pointer; // improve usability and consistency of cursor style between image-type `input` and others.
+}
+
+input[type="password"] { // input password
+	-webkit-text-security: disc;
+}
+
+*:focus {
+    outline: 0; // disable all default browser focus styles
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; // address box sizing set to `content-box` in IE
+}
+
+textarea {
+  	overflow: auto; // remove default vertical scrollbar in IE 10 & 11
+	resize: none; // remove ability for textarea to be resized 
+}
+
+ul {
+	list-style: disc; // bulleted ULs for content lists 
+	list-style-position: inside;
+}
+
+ol {
+	list-style: decimal; // numbers ULs for content lists
+	list-style-position: inside;
+}
+
+nav { 
+	ul, ol { 
+		list-style: none; // if a ul or ol is wrapped in a nav tag then no list style
+		margin-left: 0;	// erase the default margin
+	}
+}
+
+table {
+	border-collapse: collapse; // make default border go away
+	border-spacing: 0; // erase border spacing
+}
+
+blockquote {
+	&:before {
+		content:"“"; // start of quotations
+	}
+	&:after {
+		content:"”"; // end of quotations
+	}
+	p {
+		display: inline; // if a paragraph is in a blockqoute then don't page break so it aligns with the start of quotations
+	}
+}
+
+.dropdown { 
+	float: left; // make dropdown align under the button
+	button + nav {
+		display: none;
+	}
+	button.open + nav {
+		display: block;
+		margin-top: 1rem;
+		position: absolute;
+	}
+}
+
+/* visual defaults
+   ========================================================================== */
+
+.default-border {
+	border: 1px solid #000;
+}
+
+.default-background-dark {
+	background: #222;
+}
+
+.default-color-light {
+	color: #fff;
+}
+
+a {
+	color: #000; // reset all links to black
+}
+
+textarea, input { 
+	background: transparent;
+}
+
+button, input[type="submit"] {
+	@extend .default-background-dark;
+	@extend .default-color-light;
+}
+
+.dropdown {
+	button {
+		@extend .default-background-dark;
+		@extend .default-color-light;
+		&.open + nav { // dropdown
+			@extend .default-background-dark;
+			a {
+				@extend .default-color-light;
+			}
+		}
+	}
+}
+
+mark {
+	background: #e3e3e3; // change from default yellow
+}
+
+* {
+	font-weight: 400; // all headings to normal font weight to match everything else
+}
+
+table { 
+	thead {
+		tr {
+			background: none;
+		}
+	}
+	tr {
+		background: none;
+		
+		td, th {
+			@extend .default-border;
+			width: auto;
+		}
+	}
+}
+
+/* float defaults
+   ========================================================================== */
+
+.default-float {
+	clear: both;
+	display: block;
+	float: left;
+}
+
+form, h1, h2, h3, h4, h4, h5, h6, p, label, input, textarea, address, blockquote, ul, ol, pre, table {
+	@extend .default-float;
+	width: 100%;
+}
+
+button, .button, input[type="submit"], .dropdown {
+	@extend .default-float;
+	width: auto;
+}
+

@@ -1,0 +1,13 @@
+
+/* ==========================================================================
+   The Print - Loosers print, rockstars code, well maybe not.
+   ========================================================================== */
+
+@media only print { // disable printing and displaying messages
+	body * { 
+		display: none !important;
+	}
+	body:after { 
+		content: "This page is intentionally left blank for the purpose of saving our planets trees. Please find a more environmental friendly way of sharing this page's content."; 
+	}
+}

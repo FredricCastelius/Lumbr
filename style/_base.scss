@@ -1,0 +1,189 @@
+
+/* ==========================================================================
+   The Base - where we code the base for our layout
+   ========================================================================== */
+
+/* typography
+   ========================================================================== */
+
+* {
+	font-family: $font-base;
+	font-weight: $font-base-weight;
+	color: $font-base-color;
+	letter-spacing: $font-base-letter-spacing;
+}
+
+h1, h2 {
+	color: $font-headings-color;
+	letter-spacing: $font-headings-letter-spacing;
+}
+
+h1, h2, h3, h4 {
+	font-family: $font-headings;
+	font-weight: $font-headings-weight;
+}
+
+h5, h6 {
+	font-weight: $font-headings-weight;
+}
+
+/* links
+   ========================================================================== */
+
+a {
+
+	color: $link-color;
+	background: $link-background;
+	font-weight: $link-weight;
+
+	padding-bottom: $link-hover-border-position;
+	border-bottom: $link-hover-border-size $link-border-style $link-border-color;
+	
+	transition: all $hover-transition-speed ease;
+	
+	&:hover {
+		border-bottom: $link-hover-border-size $link-border-style $link-hover-border-color;
+		color: $link-hover-color;
+		background: $link-hover-background; 
+	}
+	
+	&:active {
+		color: $link-active-color; 
+	}
+
+	& > img {
+		border: none;
+		&:hover {
+			border: none;
+		}
+	}
+}
+
+/* inputs, buttons, textareas
+   ========================================================================== */
+
+select, textarea, input, button, .button{
+	color: $font-base-color;
+	font-family: $font-base;
+	font-weight: $font-headings-weight;
+	transition: $hover-transition-speed;
+}
+
+input, textarea, select {
+
+	border: $input-border-size $input-border-style $input-border-color;
+	border-radius: $input-border-radius;
+
+	&:focus {
+		border-color: $input-border-focus-color;
+	}
+}
+
+button, .button, input[type="submit"] {
+	color: $font-base-color;
+	background: $button-background;
+	border: $button-border-size $button-border-style $button-border-color;
+	border-radius: $button-border-radius;
+
+	&:hover {
+		color: $button-hover-color;
+		background: $button-hover-background;
+		border: $button-border-size $button-border-style $button-hover-border-color;
+	}
+
+	&:active {
+		background: $button-active-background;
+		border: $button-border-size $button-border-style $button-border-color;
+	}
+
+	transition: $hover-transition-speed;
+}
+
+/* tables
+   ========================================================================== */
+
+table {
+	tr { 
+		td, th {
+			border: $table-border-size $table-border-style $table-border-color;
+		}
+	}
+}
+
+/* misc
+   ========================================================================== */
+
+// mark
+mark {
+	background: $mark-background;
+}
+
+// embedd code
+pre {
+	background: $embedd-code-background;
+	color: $embedd-code-color;
+	span {
+		color: $embedd-code-color;
+	}
+}
+
+/* selection
+   ========================================================================== */
+
+::selection {
+	background: $selection-background;
+	color: $selection-text;
+	text-shadow: $selection-text-shadow;
+}
+
+::-webkit-selection {
+	background: $selection-background;
+	color: $selection-text;
+	text-shadow: $selection-text-shadow;
+}
+
+::-moz-selection {
+	background: $selection-background;
+	color: $selection-text;
+	text-shadow: $selection-text-shadow;
+}
+
+/* content
+   ========================================================================== */
+
+$input-padding-top: 0.38rem;
+$input-padding-bottom: 0.44rem;
+
+input, textarea, select {
+	padding: $input-padding-top 0.5rem $input-padding-bottom 0.5rem; // make input as larage as textarea
+	margin-bottom: 0.3rem;
+}
+
+input[type="password"] { // input password
+	padding-top: 0.41rem;
+	padding-bottom: 0.39rem;
+	margin-bottom: 1rem;
+}
+
+textarea {
+	height: 6rem + $input-padding-top + $input-padding-bottom;
+	margin-bottom: 1rem;
+}
+
+button, .button {
+	margin: 0.5rem 0;
+}
+
+label {
+	margin: 0.5rem 0 0rem 0;
+}
+
+pre {
+	padding: 1rem 2rem;
+}
+
+td, th {
+	padding: 0.5rem;
+}
+
+

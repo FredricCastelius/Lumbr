@@ -1,0 +1,90 @@
+
+/* ==========================================================================
+   The Bad Browser - browser with no support popup
+   ========================================================================== */
+
+#bad-browser-wrapper {
+	display: block;
+	z-index: 9999;
+	
+	@include absolute(0, 0, 0, 0);
+	
+	width: 100%;
+	margin-top: 2em;
+
+	font-size: 16px;
+	line-height: 1.6em;
+	
+	text-align: center;
+	
+	color: #000;
+	background: #fff;
+	
+	#bad-browser {
+		max-width: 600px;
+		margin: auto;
+		padding: 0 2em 0 2em;
+	}
+
+	#bad-browser-header {
+		display: block;
+		margin-bottom: 1em;
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+
+	#bad-browser-paragraph {
+		
+		display: block;
+		margin-bottom: 1.5em;
+
+		a {
+			border-bottom: 1px solid #e3e3e3;
+			&:hover {
+				border-bottom: 1px solid #111;
+			}
+		}
+	}
+
+	ul {
+		margin: auto;
+		list-style: none;
+
+		background: #fff;
+		color: #000;
+
+		li {
+			color: #000;
+			background: #fff;
+			width: 25%;
+			float: left;
+			line-height: 30px;
+			font-size: 16px;
+			margin: 0 0 1em 0;
+			line-height: 22px;
+			
+			@media (max-width: 600px){
+				width: 100%; 
+			}
+
+			a {
+				border: none;
+				display: block;
+				&:hover {
+					border: none;
+				}
+			}
+
+			img {
+				width: 40px;
+				margin: 0 auto 0.5em auto;
+			}
+		}
+	}
+}
+
+.flexbox { // browsers that dosen't support flexbox
+	#bad-browser-wrapper {
+		display: none;
+	}
+}
