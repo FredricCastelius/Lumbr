@@ -53,7 +53,7 @@
 
             <nav role="navigation">
                 <ul>
-                    <li><a href="https://github.com/FredricCastelius/Lumbr">Github</a></li>
+                    <li><a href="https://github.com/FredricCastelius/Lumbr">GitHub</a></li>
                     <li><a href="test.php" title="">Test page</a></li>
                 </ul>
             </nav>

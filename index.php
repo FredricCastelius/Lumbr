@@ -5,7 +5,7 @@
 		<h2>Another damn framework</h2>
 		<p>Seriously, there are great frameworks out there that are kinda all built the same way but with different styles and with a lot of classes in the markup. Lumbr is not just another framework, it's another way of thinking in the crafting and coding process. Lumbr is for you who want everything beautifully taken care of but still create whatever you want without limitations.</p>
 		
-		<p>The most powerful about lumbr is the layout mixin. Check this out:</p>
+		<p>The most powerful about lumbr is the layout mixin. Check this out.</p>
 
 		<p>This:</p>
 
@@ -38,8 +38,8 @@
 		</section>
 		<p> </p>
 		<h3>Alright, so what happen</h3>
-		<p>With just one line of code we made a responsive / elastic layout which has 2 columns. One that is 75% and the other the remaining 25%. Both automatically stacks and becomes 100% width one smaller devices. We also squeese in some vertical and horisontal padding. On top of that we verticlly center the sidebar to the main column. This is your new way of coding layouts.</p>
-		<p>Layout snippet cheat sheet</p>
+		<p>With just one line of code we made a responsive / elastic layout which has 2 columns. One that is 75% and the other the remaining 25%. Both automatically stacks and becomes 100% width on smaller devices. We also squeese in some vertical and horisontal padding. On top of that we verticlly center the sidebar to the main column. This is your new way of coding layouts.</p>
+		<p>Layout snippet cheat sheet:</p>
 <pre class="snippet"><span>@include layout(</span>
 <span class="comment"><br>horisontal alignment, 
 <br>vertical alignment, 
