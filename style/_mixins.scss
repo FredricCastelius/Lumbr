@@ -1,237 +1,8 @@
 
+
 /* ==========================================================================
    The Mixins - The place where we store all those awesome snippets
    ========================================================================== */
-
-// default
-@mixin default {
-  *, h1, h2, h3, h4, h5, p {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 1rem; // making everything to 100% font size
-    line-height: 1rem;
-    vertical-align: baseline;
-    font-family: sans-serif; // remove all default font families
-    text-align: left; // default left alignment
-    -webkit-font-smoothing: antialiased; // Smoother font on webkit browsers
-    float: left;
-  }
-}
-
-
-// breakpoints 
-
-$phone-width: $tablet-width - 1px; // when phone ends
-
-@mixin breakpoint($point) { 
-	@if $point == desktop { 
-		@media (min-width: $desktop-width) { @content; }
-	}
-	@else if $point == laptop {
-		@media (min-width: $laptop-width) and (max-width: $desktop-width - 1px)  { @content; }
-	}
-	@else if $point == laptopUp {
-		@media (min-width: $laptop-width)  { @content; }
-	}
-	@else if $point == laptopDown {
-		@media (max-width: $laptop-width - 1px)  { @content; }
-	}
-	@else if $point == tabletUp {
-		@media (min-width: $tablet-width)  { @content; }
-	}
-	@else if $point == tabletDekstop {
-		@media (min-width: $tablet-width) and (max-width: $desktop-width - 1px)  { @content; }
-	}
-	@else if $point == tablet {
-		@media (min-width: $tablet-width) and (max-width: $laptop-width - 1px) { @content; }
-	}
-	@else if $point == phone {
-		@media (max-width: $phone-width) { @content; }
-	}
-}
-
-
-// absolute position
-@mixin absolute ($top, $right, $bottom, $left) {
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-  position: absolute;
-}
-
-// fixed position
-@mixin fixed ($top: auto, $right: auto, $bottom: auto, $left: auto) { 
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-  position: fixed;
-}
-
-// text truncate
-@mixin text-truncate { 
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-// layout 
-@mixin layout($horisontal-alignment, $vertical-alignment, $direction, $grid, $grid-padding-horisontal, $grid-padding-vertical, $max-width, $grid-margin) { 
-  
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: $direction;
-
-  position: relative;
-  left: 0;
-  
-  margin-left: $grid-margin;
-  margin-right: $grid-margin;
-  
-  padding-left: $grid-padding-horisontal;
-  padding-right: $grid-padding-horisontal;
-  
-  padding-top: $grid-padding-vertical;
-  padding-bottom: $grid-padding-vertical;
-
-  @media (min-width: $max-width + $grid-margin) {
-    max-width: $max-width - $grid-margin;
-    margin: auto;
-  }
-
-  @if $direction == reverse {
-    flex-direction: row-reverse;
-  }
-
-  justify-content: $horisontal-alignment;
-
-  @if $horisontal-alignment == left {
-    justify-content: flex-start;
-  }
-
-  @if $horisontal-alignment == right {
-    justify-content: flex-end;
-  }
-
-  @if $horisontal-alignment == space-around {
-    justify-content: space-around;
-  }
-
-  @if $horisontal-alignment == space-between {
-    justify-content: space-between;
-  }
-
-  align-items: $vertical-alignment;
-
-  @if $vertical-alignment == top {
-    align-items: flex-start;
-  }
-
-  @if $vertical-alignment == bottom {
-    align-items: flex-end;
-  }
-
-  & > div, & > li, & > article, & > aside, & > main, & > form, & > header {
-    
-    flex: $grid;
-
-    position: relative;
-    left: -$grid-padding-horisontal / 2;
-
-    padding-left: $grid-padding-horisontal;
-
-    // undefined
-    @if $grid == auto { 
-      flex: 1;
-    }
-
-    // 1/6
-    @if $grid == 6col { 
-      flex: 0 0 16.667%;
-    }
-    
-    // 1/4
-    @if $grid == 4col {
-      flex: 0 0 25%;
-    }
-    
-    // 1/3
-    @if $grid == 3col { 
-      flex: 0 0 33.333%;
-    }
-
-    @if $grid == full-3col { 
-      flex: 0 0 33.333%;
-      @include breakpoint(phone) {
-        flex: 0 0 100%;
-      }
-    }
-
-    // 1/2
-    @if $grid == 2col { 
-      flex: 0 0 50%;
-    }
-
-    // 100%
-    @if $grid == 1col { 
-      flex: 0 0 100%;
-    }
-
-    // 75% 25%
-    @if $grid == fourth-one {
-      &:nth-child(odd) {
-        flex: 0 0 75%;
-      }
-      &:nth-child(even) {
-        flex: 0 0 25%;
-      }
-    }
-
-    // 100% on mobile 75% 25% on above
-    @if $grid == full-fourth-one {
-      &:nth-child(odd) {
-        flex: 0 0 75%;
-        @include breakpoint(phone) {
-          flex: 0 0 100%;
-        }
-      }
-      &:nth-child(even) {
-        flex: 0 0 25%;
-        @include breakpoint(phone) {
-          flex: 0 0 100%;
-        }
-      }
-    }
-
-    /* 20% 80% on above */
-    @if $grid == one-fifth {
-      &:nth-child(odd) {
-        flex: 0 0 80%;
-      }
-      &:nth-child(even) {
-        flex: 0 0 20%;
-      }
-    }
-
-    /* 100% on mobile 20% 80% on above */
-    @if $grid == full-one-fifth {
-      &:nth-child(odd) {
-        flex: 0 0 80%;
-        @include breakpoint(phone) {
-          flex: 0 0 100%;
-        }
-      }
-      &:nth-child(even) {
-        flex: 0 0 20%;
-        @include breakpoint(phone) {
-          flex: 0 0 100%;
-        }
-      }
-    }
-  }
-}
 
 // horisontal navigation
 @mixin nav($nav-float, $nav-direction, $nav-margin, $nav-padding, $nav-background){
@@ -270,6 +41,63 @@ $phone-width: $tablet-width - 1px; // when phone ends
   }
 }
 
+// breakpoints 
+@mixin breakpoint($point) { 
+
+  $phone-width: $tablet-width - 1px; // when phone ends
+
+  @if $point == desktop { 
+    @media (min-width: $desktop-width) { @content; }
+  }
+  @else if $point == laptop {
+    @media (min-width: $laptop-width) and (max-width: $desktop-width - 1px)  { @content; }
+  }
+  @else if $point == laptopUp {
+    @media (min-width: $laptop-width)  { @content; }
+  }
+  @else if $point == laptopDown {
+    @media (max-width: $laptop-width - 1px)  { @content; }
+  }
+  @else if $point == tabletUp {
+    @media (min-width: $tablet-width)  { @content; }
+  }
+  @else if $point == tabletDekstop {
+    @media (min-width: $tablet-width) and (max-width: $desktop-width - 1px)  { @content; }
+  }
+  @else if $point == tablet {
+    @media (min-width: $tablet-width) and (max-width: $laptop-width - 1px) { @content; }
+  }
+  @else if $point == phone {
+    @media (max-width: $phone-width) { @content; }
+  }
+}
+
+
+// absolute position
+@mixin absolute ($top, $right, $bottom, $left) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+// fixed position
+@mixin fixed ($top: auto, $right: auto, $bottom: auto, $left: auto) { 
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: fixed;
+}
+
+// text truncate
+@mixin text-truncate { 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 // animations
 @mixin animation($animation-name, $animation-duration,  $animation-delay, $animation-timing) {
   animation-name: $animation-name;
@@ -278,7 +106,5 @@ $phone-width: $tablet-width - 1px; // when phone ends
   animation-fill-mode: both;
   animation-timing: $animation-timing;
 }
-
-
 
 

@@ -1,13 +1,6 @@
 	    <footer role="contentinfo">
-	    	<p id="footer-logo">Lumbr</p>
-	    
 			<iframe src="http://ghbtns.com/github-btn.html?user=FredricCastelius&repo=Lumbr&type=watch&count=true"
 			  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe><br>
-
-			<iframe src="http://ghbtns.com/github-btn.html?user=FredricCastelius&repo=Lumbr&type=fork&count=true"
-			  allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
-
-			<p>Created and maintained by <a href="http://fredriccastelius.github.io/">Fredric Castelius</a>. All contribution is much appreciated.</p>
 	    </footer>
 
 	</div>

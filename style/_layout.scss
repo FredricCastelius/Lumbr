@@ -1,14 +1,17 @@
 
 /* ==========================================================================
-   The Layout - Go nuts
+   The Layout
    ========================================================================== */
 
 #wrapper {
 	
-	@include layout(center, top, normal, 1col, 0rem, 2rem, 60rem, 1.5rem);
-	
+	max-width: 60rem;
+	margin: auto;
+	padding: 0 1rem;
+
 	header {
 		@include nav(right, right, 0 0.5rem, 0, none);
+		margin-top: 2rem;
 		margin-bottom: 2rem;
 		width: 100%;
 		#logo {
@@ -24,20 +27,18 @@
 	}
 
 	main {
-		section {
-			background: rgba(0, 0, 0, 0.025);
-			@include layout(center, center, normal, full-one-fifth, 1.5rem, 1rem, auto, 0rem);
-		}
+		margin-top: 2rem;
+		margin-bottom: 5rem;
+		float: left;
 	}
 
 	footer {
 		margin-top: 1rem;
+		margin-bottom: 5rem;
 		padding-top: 1rem;
 		border-top: 1px solid #e3e3e3;
 		width: 100%;
-		p#footer-logo {
-			font-weight: bold;
-		}
+		overflow: auto;	
 	}
 }
 
