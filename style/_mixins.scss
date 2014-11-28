@@ -78,7 +78,7 @@ $phone-width: $tablet-width - 1px; // when phone ends
 }
 
 // layout 
-@mixin layout($horisontal-alignment, $vertical-alignment, $direction, $grid, $grid-padding-horisontal, $grid-padding-vertical, $max-width, $grid-margin) { 
+@mixin layout($horisontal-alignment, $vertical-alignment, $direction, $grid, $grid-padding-horisontal, $grid-padding-vertical, $grid-margin) { 
   
   display: flex;
   flex-wrap: wrap;
@@ -96,10 +96,10 @@ $phone-width: $tablet-width - 1px; // when phone ends
   padding-top: $grid-padding-vertical;
   padding-bottom: $grid-padding-vertical;
 
-  @media (min-width: $max-width + $grid-margin) {
+  /*@media (min-width: $max-width + $grid-margin) {
     max-width: $max-width - $grid-margin;
     margin: auto;
-  }
+  }*/
 
   @if $direction == reverse {
     flex-direction: row-reverse;
